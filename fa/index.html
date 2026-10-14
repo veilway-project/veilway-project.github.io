@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Veilway</title>
+<meta name="description" content="Veilway نرم‌افزاری متن‌باز برای راه‌اندازی سرور VPN شخصی روی شبکه‌های سانسورشده یا ناامن است. آزمایشی، با مجوز Apache-2.0.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="../img/icon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="https://veilway-project.github.io/">
+<link rel="alternate" hreflang="fa" href="https://veilway-project.github.io/fa/">
+<link rel="preload" href="../fonts/vazirmatn-arabic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../site.css">
+</head>
+<body class="vw-root vw-backdrop" data-fixed>
+<a class="skip" href="#main">رفتن به محتوا</a>
+<header class="wrap top">
+	<a class="brand" href="./"><img src="../img/icon.svg" alt="" width="36" height="36">Veilway</a>
+	<nav aria-label="سایت">
+		<ul>
+			<li><a href="https://github.com/veilway-project/veilway">کد</a></li>
+			<li class="doc-link"><a href="https://veilway-project.github.io/veilway-docs/fa/">مستندات</a></li>
+			<li><a class="lang" href="../" hreflang="en" lang="en">English</a></li>
+		</ul>
+	</nav>
+</header>
+<main id="main">
+	<section class="wrap hero" aria-labelledby="title">
+		<div>
+			<h1 id="title">VPN برای شبکه‌هایی که VPN را می‌بندند</h1>
+			<p class="lede">Veilway نرم‌افزاری متن‌باز برای راه‌اندازی سرور VPN شخصی روی شبکه‌ای سانسورشده یا ناامن است، برای خودتان یا یک گروه کوچک. هستهٔ Rust، پنل وب و برنامه‌ها همه در یک پروژه‌اند، و قرار است جای هستهٔ Xray، پنل 3x-ui و کلاینت‌های v2ray را بگیرد.</p>
+			<div class="notice" role="note">
+				<svg class="vw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4.5"/><path d="M12 17.2v.1"/></svg>
+				<p><strong>آزمایشی.</strong> هنوز هیچ بازبینی امنیتی بیرونی نداشته، هیچ برنامه‌ای با پروتکل جدیدش کار نمی‌کند و چیزی برای دانلود وجود ندارد. فعلاً برای گردانندگان سرور و برنامه‌نویسانی است که خودشان از روی کد می‌سازند.</p>
+			</div>
+			<div class="actions">
+				<a class="vw-button" data-variant="primary" href="https://github.com/veilway-project/veilway">دیدن کد</a>
+				<a class="vw-button" href="https://veilway-project.github.io/veilway-docs/fa/">خواندن مستندات</a>
+			</div>
+		</div>
+		<figure class="shots">
+			<div class="shots-pair">
+				<img class="back" src="../img/client-dark-en.png" width="360" height="721" alt="پنجرهٔ کلاینت در حالت متصل، با پوستهٔ تیره و به انگلیسی">
+				<img class="front" src="../img/client-light-fa.png" width="360" height="721" alt="پنجرهٔ کلاینت در حالت متصل، با پوستهٔ روشن و به فارسی">
+			</div>
+			<figcaption>پنجرهٔ کلاینت از سیستم طراحی‌ای که برنامه‌ها بر پایهٔ آن ساخته می‌شوند. همهٔ نام‌ها و عددهای آن ساختگی‌اند.</figcaption>
+		</figure>
+	</section>
+	<section class="section" aria-labelledby="different">
+		<div class="wrap">
+			<div class="intro">
+				<h2 id="different">چه چیزی را متفاوت انجام می‌دهد</h2>
+				<p>خود تونل استاندارد می‌ماند. تلاش اصلی برای رساندن آن از شبکه است، و برای یک مجموعه ابزار یکپارچه از سرور تا گوشی.</p>
+			</div>
+			<div class="vw-glass sheet">
+				<ul class="points">
+					<li>
+						<h3>رمزنگاری خود WireGuard</h3>
+						<p>تونل همان WireGuard دست‌نخورده است و با boringtun کار می‌کند. Veilway دور تونل کار می‌کند و رمزنگاری تازه‌ای از خودش نمی‌سازد.</p>
+					</li>
+					<li>
+						<h3>ترنسپورت برای جایی که UDP بسته است</h3>
+						<p>تونل می‌تواند از راه UDP مبهم‌سازی‌شده، TLS، WebSocket یا یک مسیر HTTP پشت دامنهٔ دیگر برود. کسی که بدون حساب کاربری سرور را بررسی کند، همان پاسخ معمولی وب‌سایت خود گرداننده را می‌گیرد.</p>
+					</li>
+					<li>
+						<h3>یک موتور برای سرور و برنامه‌ها</h3>
+						<p>سرور و برنامه‌ها روی یک هستهٔ Rust ساخته می‌شوند. این هسته یک کتابخانه هم هست، برای هر کسی که یک موتور WireGuard در برنامهٔ خودش می‌خواهد.</p>
+					</li>
+					<li>
+						<h3>ورود از یک سرور، خروج از سروری دیگر</h3>
+						<p>دو سرور را می‌شود به هم وصل کرد تا کاربران به یکی وصل شوند و ترافیکشان از دیگری بیرون برود. گردانندگان آن‌ها را با دو کد جفت می‌کنند و یک اثر انگشت را با هم مقایسه می‌کنند. هسته امروز این کار را می‌کند و پنل بعداً مدیریتش را بر عهده می‌گیرد.</p>
+					</li>
+					<li>
+						<h3>فارسی و انگلیسی از روز اول</h3>
+						<p>سیستم طراحی و مستندات به هر دو زبان نوشته شده‌اند، با چیدمان راست‌به‌چپ، رقم‌های فارسی و تاریخ شمسی، و هر برنامه‌ای که روی آن‌ها ساخته شود هم همین‌طور است.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section class="section" aria-labelledby="status">
+		<div class="wrap">
+			<div class="intro">
+				<h2 id="status">کار به کجا رسیده</h2>
+				<p>جایی که از کار افتادن Veilway شما را به خطر می‌اندازد، به آن تکیه نکنید. هیچ بخشی از آن در برابر بازرسی عمیق بسته‌ها (DPI) یا کاوش فعال آزموده نشده، و مشخصات پروتکلش پیش‌نویسی است که فقط خود پروژه بازبینی‌اش کرده است.</p>
+			</div>
+			<div class="stack">
+				<div class="vw-glass sheet">
+					<h3>آنچه امروز کار می‌کند</h3>
+					<ul class="done-list">
+						<li>سروری که WireGuard را برای کاربران زیادی روی UDP و WebSocket اجرا می‌کند، با قانون‌های مسیریابی، سهمیهٔ مصرف و بارگذاری دوبارهٔ پیکربندی بدون راه‌اندازی دوباره.</li>
+						<li>سمت سرور پروتکل جدید: یک کانال کنترل درون تونل و چهار ترنسپورت، به‌اضافهٔ یک کتابخانهٔ کلاینت برای آن‌ها که هنوز هیچ برنامه‌ای از آن استفاده نمی‌کند.</li>
+						<li>اتصال دو سرور به هم، با کدهایی که هر دو گرداننده با هم مقایسه می‌کنند.</li>
+						<li>یک برنامهٔ دسکتاپ ویندوز که فایل معمولی WireGuard را می‌خواند. این برنامه با پروتکل جدید کار نمی‌کند.</li>
+						<li>سیستم طراحی پنل و برنامه‌ها، که هنوز چیزی از آن استفاده نمی‌کند.</li>
+					</ul>
+					<h3>قدم بعدی</h3>
+					<p class="next">موتور کلاینت برای ویندوز، macOS و لینوکس. پس از آن پنل وب، برنامهٔ دسکتاپ به‌عنوان نخستین نسخهٔ آلفای عمومی، و برنامهٔ اندروید می‌آیند.</p>
+				</div>
+				<div class="vw-glass sheet">
+					<h3>برنامه، مرحله به مرحله</h3>
+					<ol class="phases">
+						<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">۰</span><span>مخزن، مجوز، مدل تهدید</span><span class="phase-state">انجام شد</span></li>
+						<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">۱</span><span>موتور هسته</span><span class="phase-state">انجام شد</span></li>
+						<li data-state="now"><span class="stroke" aria-hidden="true"></span><span class="phase-n">۲</span><span>پروتکل جدید و موتور کلاینت</span><span class="phase-state">در حال انجام</span></li>
+						<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">۳</span><span>سیستم طراحی</span><span class="phase-state">انجام شد</span></li>
+						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۴</span><span>پنل وب</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
+						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۵</span><span>برنامهٔ دسکتاپ، آلفای عمومی</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
+						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۶</span><span>افزونهٔ اختیاری Xray</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
+						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۷</span><span>برنامهٔ اندروید</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
+						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۸</span><span>مستندات کامل، نسخه‌های امضاشده</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section" aria-labelledby="involved">
+		<div class="wrap">
+			<div class="intro">
+				<h2 id="involved">بخوانید، اجرا کنید، گزارش دهید</h2>
+				<p>همه‌چیز آشکارا و در سازمان veilway-project در GitHub انجام می‌شود.</p>
+			</div>
+			<div class="vw-glass sheet">
+				<ul class="links">
+					<li>
+						<a href="https://github.com/veilway-project/veilway">کد</a>
+						<p>هسته، API کنترل و برنامهٔ دسکتاپ. راهنمای ساختن از روی کد در README آمده است.</p>
+						<span class="vw-code">github.com/veilway-project/veilway</span>
+					</li>
+					<li>
+						<a href="https://veilway-project.github.io/veilway-docs/fa/">مستندات</a>
+						<p>مشخصات پروتکل، مرجع پیکربندی و راهنماها، به فارسی و انگلیسی. بسیاری از صفحه‌ها هنوز فقط طرح کلی دارند.</p>
+						<span class="vw-code">veilway-project.github.io/veilway-docs</span>
+					</li>
+					<li>
+						<a href="https://github.com/veilway-project/veilway/blob/main/SECURITY.md">سیاست امنیتی</a>
+						<p>آسیب‌پذیری را به‌صورت خصوصی و از راه فرم GitHub گزارش دهید، هرگز در یک issue عمومی.</p>
+						<span class="vw-code">SECURITY.md</span>
+					</li>
+					<li>
+						<a href="https://github.com/veilway-project/veilway/blob/main/CONTRIBUTING.fa.md">مشارکت</a>
+						<p>پیش از نخستین pull request این را بخوانید. در همان بار اول از شما خواسته می‌شود CLA را امضا کنید.</p>
+						<span class="vw-code">CONTRIBUTING.fa.md</span>
+					</li>
+					<li>
+						<a href="https://github.com/veilway-project">همهٔ مخزن‌ها</a>
+						<p>هسته، مستندات و سیستم طراحی، هر کدام در مخزن خودش.</p>
+						<span class="vw-code">github.com/veilway-project</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</main>
+<footer class="foot">
+	<div class="wrap">
+		<p>Veilway با مجوز <a href="https://github.com/veilway-project/veilway/blob/main/LICENSE">Apache-2.0</a> منتشر می‌شود. این مجوز شامل نام پروژه نمی‌شود، <a href="https://github.com/veilway-project/veilway/blob/main/TRADEMARKS.md">TRADEMARKS.md</a> را ببینید.</p>
+		<p>این صفحه هیچ کوکی‌ای نمی‌گذارد و چیزی از سایت‌های دیگر بارگیری نمی‌کند. فونت‌ها با مجوز SIL Open Font License: <a href="../fonts/OFL-atkinson-hyperlegible-next.txt">Atkinson Hyperlegible Next</a>، <a href="../fonts/OFL-atkinson-hyperlegible-mono.txt">Atkinson Hyperlegible Mono</a> و <a href="../fonts/OFL-vazirmatn.txt">Vazirmatn</a>.</p>
+	</div>
+</footer>
+</body>
+</html>
