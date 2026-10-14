@@ -28,25 +28,55 @@
 </header>
 <main id="main">
 	<section class="wrap hero" aria-labelledby="title">
-		<div>
-			<h1 id="title">A VPN for networks that block VPNs</h1>
-			<p class="lede">Veilway is open-source software for running your own VPN server on a censored or hostile network, for yourself or a small group. One project holds the Rust core, a web panel and the apps, and it is meant to replace the Xray core, 3x-ui and v2ray clients.</p>
-			<div class="notice" role="note">
-				<svg class="vw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4.5"/><path d="M12 17.2v.1"/></svg>
-				<p><strong>Experimental.</strong> It has had no outside security review, no app speaks its new protocol yet, and there is nothing to download. Today it is for operators and developers who build from source.</p>
+		<h1 id="title">A VPN for networks that block VPNs</h1>
+		<div class="hero-body">
+			<div>
+				<p class="lede">Veilway is open-source software for running your own VPN server on a censored or hostile network, for yourself or a small group. One project holds the Rust core, a web panel and the apps, and it is meant to replace the Xray core, 3x-ui and v2ray clients.</p>
+				<div class="actions">
+					<a class="vw-button" data-variant="primary" href="https://github.com/veilway-project/veilway">Read the code</a>
+					<a class="vw-button" href="https://veilway-project.github.io/veilway-docs/">Read the docs</a>
+				</div>
 			</div>
-			<div class="actions">
-				<a class="vw-button" data-variant="primary" href="https://github.com/veilway-project/veilway">Read the code</a>
-				<a class="vw-button" href="https://veilway-project.github.io/veilway-docs/">Read the docs</a>
+			<p class="caveat" role="note"><strong><svg class="vw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4.5"/><path d="M12 17.2v.1"/></svg>Experimental</strong>It has had no outside security review, no app speaks its new protocol yet, and there is nothing to download. Today it is for operators and developers who build from source.</p>
+		</div>
+	</section>
+	<section class="section" aria-labelledby="status">
+		<div class="wrap">
+			<div class="intro">
+				<h2 id="status">Where it stands</h2>
+				<p>Do not rely on Veilway where a failure would put you at risk. Nothing in it has been tested against deep packet inspection or active probing, and its protocol spec is a draft only the project has reviewed.</p>
+			</div>
+			<div class="plan">
+				<h3 class="vw-sr">The plan, phase by phase</h3>
+				<ol class="phases">
+					<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">0</span><span class="phase-name">Repository, license, threat model</span><span class="phase-state">Done</span></li>
+					<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">1</span><span class="phase-name">Core engine</span><span class="phase-state">Done</span></li>
+					<li data-state="now"><span class="stroke" aria-hidden="true"></span><span class="phase-n">2</span><span class="phase-name">New protocol and client engine</span><span class="phase-state">In progress</span></li>
+					<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">3</span><span class="phase-name">Design system</span><span class="phase-state">Done</span></li>
+					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">4</span><span class="phase-name">Web panel</span><span class="phase-state">Planned</span></li>
+					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">5</span><span class="phase-name">Desktop app, public alpha</span><span class="phase-state">Planned</span></li>
+					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">6</span><span class="phase-name">Optional Xray add-on</span><span class="phase-state">Planned</span></li>
+					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">7</span><span class="phase-name">Android app</span><span class="phase-state">Planned</span></li>
+					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">8</span><span class="phase-name">Full docs, signed releases</span><span class="phase-state">Planned</span></li>
+				</ol>
+			</div>
+			<div class="status">
+				<div>
+					<h3>Works today</h3>
+					<ul class="done-list">
+						<li>A server that runs WireGuard for many users over UDP and WebSocket, with routing rules, quotas, and config reload without a restart.</li>
+						<li>The server side of the new protocol: a control channel inside the tunnel and four transports, plus a client library for them that no app uses yet.</li>
+						<li>Links between two servers, paired with codes both operators compare.</li>
+						<li>A Windows desktop app that reads a normal WireGuard file. It does not speak the new protocol.</li>
+						<li>The design system for the panel and the apps, which nothing uses yet.</li>
+					</ul>
+				</div>
+				<div>
+					<h3>Next</h3>
+					<p class="next">The client engine for Windows, macOS and Linux. After it come the web panel, the desktop app as the first public alpha, and the Android app.</p>
+				</div>
 			</div>
 		</div>
-		<figure class="shots">
-			<div class="shots-pair">
-				<img class="back" src="img/client-light-fa.png" width="360" height="721" alt="The client window, connected, in the light scheme and in Persian">
-				<img class="front" src="img/client-dark-en.png" width="360" height="721" alt="The client window, connected, in the dark scheme and in English">
-			</div>
-			<figcaption>The client window from the design system the apps will use. Every name and number in it is made up.</figcaption>
-		</figure>
 	</section>
 	<section class="section" aria-labelledby="different">
 		<div class="wrap">
@@ -54,7 +84,14 @@
 				<h2 id="different">What it does differently</h2>
 				<p>The tunnel stays standard. The work goes into getting it through, and into one set of tools from the server to the phone.</p>
 			</div>
-			<div class="vw-glass sheet">
+			<div class="diff">
+				<figure class="shots">
+					<div class="shots-pair">
+						<img src="img/client-dark-en.png" width="360" height="721" alt="The client window, connected, in the dark scheme and in English">
+						<img src="img/client-light-fa.png" width="360" height="721" alt="The client window, connected, in the light scheme and in Persian">
+					</div>
+					<figcaption>The client window from the design system the apps will use, in both schemes and both languages. Every name and number in it is made up.</figcaption>
+				</figure>
 				<ul class="points">
 					<li>
 						<h3>WireGuard's own cryptography</h3>
@@ -80,47 +117,11 @@
 			</div>
 		</div>
 	</section>
-	<section class="section" aria-labelledby="status">
-		<div class="wrap">
-			<div class="intro">
-				<h2 id="status">Where it stands</h2>
-				<p>Do not rely on Veilway where a failure would put you at risk. Nothing in it has been tested against deep packet inspection or active probing, and its protocol spec is a draft only the project has reviewed.</p>
-			</div>
-			<div class="stack">
-				<div class="vw-glass sheet">
-					<h3>Works today</h3>
-					<ul class="done-list">
-						<li>A server that runs WireGuard for many users over UDP and WebSocket, with routing rules, quotas, and config reload without a restart.</li>
-						<li>The server side of the new protocol: a control channel inside the tunnel and four transports, plus a client library for them that no app uses yet.</li>
-						<li>Links between two servers, paired with codes both operators compare.</li>
-						<li>A Windows desktop app that reads a normal WireGuard file. It does not speak the new protocol.</li>
-						<li>The design system for the panel and the apps, which nothing uses yet.</li>
-					</ul>
-					<h3>Next</h3>
-					<p class="next">The client engine for Windows, macOS and Linux. After it come the web panel, the desktop app as the first public alpha, and the Android app.</p>
-				</div>
-				<div class="vw-glass sheet">
-					<h3>The plan, phase by phase</h3>
-					<ol class="phases">
-						<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">0</span><span>Repository, licence, threat model</span><span class="phase-state">Done</span></li>
-						<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">1</span><span>Core engine</span><span class="phase-state">Done</span></li>
-						<li data-state="now"><span class="stroke" aria-hidden="true"></span><span class="phase-n">2</span><span>New protocol and client engine</span><span class="phase-state">In progress</span></li>
-						<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">3</span><span>Design system</span><span class="phase-state">Done</span></li>
-						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">4</span><span>Web panel</span><span class="phase-state">Planned</span></li>
-						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">5</span><span>Desktop app, public alpha</span><span class="phase-state">Planned</span></li>
-						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">6</span><span>Optional Xray add-on</span><span class="phase-state">Planned</span></li>
-						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">7</span><span>Android app</span><span class="phase-state">Planned</span></li>
-						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">8</span><span>Full docs, signed releases</span><span class="phase-state">Planned</span></li>
-					</ol>
-				</div>
-			</div>
-		</div>
-	</section>
 	<section class="section" aria-labelledby="involved">
 		<div class="wrap">
 			<div class="intro">
 				<h2 id="involved">Read it, run it, report it</h2>
-				<p>Everything happens in the open, under the veilway-project organisation on GitHub.</p>
+				<p>Everything happens in the open, under the veilway-project organization on GitHub.</p>
 			</div>
 			<div class="vw-glass sheet">
 				<ul class="links">
@@ -132,7 +133,7 @@
 					<li>
 						<a href="https://veilway-project.github.io/veilway-docs/">Docs</a>
 						<p>The protocol spec, the config reference and manuals, in English and Persian. Many pages are still outlines.</p>
-						<span class="vw-code">veilway-project.github.io/veilway-docs</span>
+						<span class="vw-code">veilway-project.github.io/<wbr>veilway-docs</span>
 					</li>
 					<li>
 						<a href="https://github.com/veilway-project/veilway/blob/main/SECURITY.md">Security policy</a>
@@ -156,7 +157,7 @@
 </main>
 <footer class="foot">
 	<div class="wrap">
-		<p>Veilway is licensed under <a href="https://github.com/veilway-project/veilway/blob/main/LICENSE">Apache-2.0</a>. The licence does not cover the name, see <a href="https://github.com/veilway-project/veilway/blob/main/TRADEMARKS.md">TRADEMARKS.md</a>.</p>
+		<p>Veilway is licensed under <a href="https://github.com/veilway-project/veilway/blob/main/LICENSE">Apache-2.0</a>. The license does not cover the name, see <a href="https://github.com/veilway-project/veilway/blob/main/TRADEMARKS.md">TRADEMARKS.md</a>.</p>
 		<p>This page sets no cookies and loads nothing from other sites. Fonts under the SIL Open Font License: <a href="fonts/OFL-atkinson-hyperlegible-next.txt">Atkinson Hyperlegible Next</a>, <a href="fonts/OFL-atkinson-hyperlegible-mono.txt">Atkinson Hyperlegible Mono</a> and <a href="fonts/OFL-vazirmatn.txt">Vazirmatn</a>.</p>
 	</div>
 </footer>

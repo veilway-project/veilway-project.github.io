@@ -28,25 +28,55 @@
 </header>
 <main id="main">
 	<section class="wrap hero" aria-labelledby="title">
-		<div>
-			<h1 id="title">VPN برای شبکه‌هایی که VPN را می‌بندند</h1>
-			<p class="lede">Veilway نرم‌افزاری متن‌باز برای راه‌اندازی سرور VPN شخصی روی شبکه‌ای سانسورشده یا ناامن است، برای خودتان یا یک گروه کوچک. هستهٔ Rust، پنل وب و برنامه‌ها همه در یک پروژه‌اند، و قرار است جای هستهٔ Xray، پنل 3x-ui و کلاینت‌های v2ray را بگیرد.</p>
-			<div class="notice" role="note">
-				<svg class="vw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4.5"/><path d="M12 17.2v.1"/></svg>
-				<p><strong>آزمایشی.</strong> هنوز هیچ بازبینی امنیتی بیرونی نداشته، هیچ برنامه‌ای با پروتکل جدیدش کار نمی‌کند و چیزی برای دانلود وجود ندارد. فعلاً برای گردانندگان سرور و برنامه‌نویسانی است که خودشان از روی کد می‌سازند.</p>
+		<h1 id="title">VPN برای شبکه‌هایی که VPN را می‌بندند</h1>
+		<div class="hero-body">
+			<div>
+				<p class="lede">Veilway نرم‌افزاری متن‌باز برای راه‌اندازی سرور VPN شخصی روی شبکه‌ای سانسورشده یا ناامن است، برای خودتان یا یک گروه کوچک. هستهٔ Rust، پنل وب و برنامه‌ها همه در یک پروژه‌اند، و قرار است جای هستهٔ Xray، پنل 3x-ui و کلاینت‌های v2ray را بگیرد.</p>
+				<div class="actions">
+					<a class="vw-button" data-variant="primary" href="https://github.com/veilway-project/veilway">دیدن کد</a>
+					<a class="vw-button" href="https://veilway-project.github.io/veilway-docs/fa/">خواندن مستندات</a>
+				</div>
 			</div>
-			<div class="actions">
-				<a class="vw-button" data-variant="primary" href="https://github.com/veilway-project/veilway">دیدن کد</a>
-				<a class="vw-button" href="https://veilway-project.github.io/veilway-docs/fa/">خواندن مستندات</a>
+			<p class="caveat" role="note"><strong><svg class="vw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4.5"/><path d="M12 17.2v.1"/></svg>آزمایشی</strong>هنوز هیچ بازبینی امنیتی بیرونی نداشته، هیچ برنامه‌ای با پروتکل جدیدش کار نمی‌کند و چیزی برای دانلود وجود ندارد. فعلاً برای گردانندگان سرور و برنامه‌نویسانی است که خودشان از روی کد می‌سازند.</p>
+		</div>
+	</section>
+	<section class="section" aria-labelledby="status">
+		<div class="wrap">
+			<div class="intro">
+				<h2 id="status">کار به کجا رسیده</h2>
+				<p>جایی که از کار افتادن Veilway شما را به خطر می‌اندازد، به آن تکیه نکنید. هیچ بخشی از آن در برابر بازرسی عمیق بسته‌ها (DPI) یا کاوش فعال آزموده نشده، و مشخصات پروتکلش پیش‌نویسی است که فقط خود پروژه بازبینی‌اش کرده است.</p>
+			</div>
+			<div class="plan">
+				<h3 class="vw-sr">برنامه، مرحله به مرحله</h3>
+				<ol class="phases">
+					<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">۰</span><span class="phase-name">مخزن، مجوز، مدل تهدید</span><span class="phase-state">انجام شد</span></li>
+					<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">۱</span><span class="phase-name">موتور هسته</span><span class="phase-state">انجام شد</span></li>
+					<li data-state="now"><span class="stroke" aria-hidden="true"></span><span class="phase-n">۲</span><span class="phase-name">پروتکل جدید و موتور کلاینت</span><span class="phase-state">در حال انجام</span></li>
+					<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">۳</span><span class="phase-name">سیستم طراحی</span><span class="phase-state">انجام شد</span></li>
+					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۴</span><span class="phase-name">پنل وب</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
+					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۵</span><span class="phase-name">برنامهٔ دسکتاپ، آلفای عمومی</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
+					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۶</span><span class="phase-name">افزونهٔ اختیاری Xray</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
+					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۷</span><span class="phase-name">برنامهٔ اندروید</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
+					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۸</span><span class="phase-name">مستندات کامل، نسخه‌های امضاشده</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
+				</ol>
+			</div>
+			<div class="status">
+				<div>
+					<h3>آنچه امروز کار می‌کند</h3>
+					<ul class="done-list">
+						<li>سروری که WireGuard را برای کاربران زیادی روی UDP و WebSocket اجرا می‌کند، با قانون‌های مسیریابی، سهمیهٔ مصرف و بارگذاری دوبارهٔ پیکربندی بدون راه‌اندازی دوباره.</li>
+						<li>سمت سرور پروتکل جدید: یک کانال کنترل درون تونل و چهار ترنسپورت، به‌اضافهٔ یک کتابخانهٔ کلاینت برای آن‌ها که هنوز هیچ برنامه‌ای از آن استفاده نمی‌کند.</li>
+						<li>اتصال دو سرور به هم، با کدهایی که هر دو گرداننده با هم مقایسه می‌کنند.</li>
+						<li>یک برنامهٔ دسکتاپ ویندوز که فایل معمولی WireGuard را می‌خواند. این برنامه با پروتکل جدید کار نمی‌کند.</li>
+						<li>سیستم طراحی پنل و برنامه‌ها، که هنوز چیزی از آن استفاده نمی‌کند.</li>
+					</ul>
+				</div>
+				<div>
+					<h3>قدم بعدی</h3>
+					<p class="next">موتور کلاینت برای ویندوز، macOS و لینوکس. پس از آن پنل وب، برنامهٔ دسکتاپ به‌عنوان نخستین نسخهٔ آلفای عمومی، و برنامهٔ اندروید می‌آیند.</p>
+				</div>
 			</div>
 		</div>
-		<figure class="shots">
-			<div class="shots-pair">
-				<img class="back" src="../img/client-dark-en.png" width="360" height="721" alt="پنجرهٔ کلاینت در حالت متصل، با پوستهٔ تیره و به انگلیسی">
-				<img class="front" src="../img/client-light-fa.png" width="360" height="721" alt="پنجرهٔ کلاینت در حالت متصل، با پوستهٔ روشن و به فارسی">
-			</div>
-			<figcaption>پنجرهٔ کلاینت از سیستم طراحی‌ای که برنامه‌ها بر پایهٔ آن ساخته می‌شوند. همهٔ نام‌ها و عددهای آن ساختگی‌اند.</figcaption>
-		</figure>
 	</section>
 	<section class="section" aria-labelledby="different">
 		<div class="wrap">
@@ -54,7 +84,14 @@
 				<h2 id="different">چه چیزی را متفاوت انجام می‌دهد</h2>
 				<p>خود تونل استاندارد می‌ماند. تلاش اصلی برای رساندن آن از شبکه است، و برای یک مجموعه ابزار یکپارچه از سرور تا گوشی.</p>
 			</div>
-			<div class="vw-glass sheet">
+			<div class="diff">
+				<figure class="shots">
+					<div class="shots-pair">
+						<img src="../img/client-light-fa.png" width="360" height="721" alt="پنجرهٔ کلاینت در حالت متصل، با پوستهٔ روشن و به فارسی">
+						<img src="../img/client-dark-en.png" width="360" height="721" alt="پنجرهٔ کلاینت در حالت متصل، با پوستهٔ تیره و به انگلیسی">
+					</div>
+					<figcaption>پنجرهٔ کلاینت از سیستم طراحی‌ای که برنامه‌ها بر پایهٔ آن ساخته می‌شوند، با هر دو پوسته و هر دو زبان. همهٔ نام‌ها و عددهای آن ساختگی‌اند.</figcaption>
+				</figure>
 				<ul class="points">
 					<li>
 						<h3>رمزنگاری خود WireGuard</h3>
@@ -80,42 +117,6 @@
 			</div>
 		</div>
 	</section>
-	<section class="section" aria-labelledby="status">
-		<div class="wrap">
-			<div class="intro">
-				<h2 id="status">کار به کجا رسیده</h2>
-				<p>جایی که از کار افتادن Veilway شما را به خطر می‌اندازد، به آن تکیه نکنید. هیچ بخشی از آن در برابر بازرسی عمیق بسته‌ها (DPI) یا کاوش فعال آزموده نشده، و مشخصات پروتکلش پیش‌نویسی است که فقط خود پروژه بازبینی‌اش کرده است.</p>
-			</div>
-			<div class="stack">
-				<div class="vw-glass sheet">
-					<h3>آنچه امروز کار می‌کند</h3>
-					<ul class="done-list">
-						<li>سروری که WireGuard را برای کاربران زیادی روی UDP و WebSocket اجرا می‌کند، با قانون‌های مسیریابی، سهمیهٔ مصرف و بارگذاری دوبارهٔ پیکربندی بدون راه‌اندازی دوباره.</li>
-						<li>سمت سرور پروتکل جدید: یک کانال کنترل درون تونل و چهار ترنسپورت، به‌اضافهٔ یک کتابخانهٔ کلاینت برای آن‌ها که هنوز هیچ برنامه‌ای از آن استفاده نمی‌کند.</li>
-						<li>اتصال دو سرور به هم، با کدهایی که هر دو گرداننده با هم مقایسه می‌کنند.</li>
-						<li>یک برنامهٔ دسکتاپ ویندوز که فایل معمولی WireGuard را می‌خواند. این برنامه با پروتکل جدید کار نمی‌کند.</li>
-						<li>سیستم طراحی پنل و برنامه‌ها، که هنوز چیزی از آن استفاده نمی‌کند.</li>
-					</ul>
-					<h3>قدم بعدی</h3>
-					<p class="next">موتور کلاینت برای ویندوز، macOS و لینوکس. پس از آن پنل وب، برنامهٔ دسکتاپ به‌عنوان نخستین نسخهٔ آلفای عمومی، و برنامهٔ اندروید می‌آیند.</p>
-				</div>
-				<div class="vw-glass sheet">
-					<h3>برنامه، مرحله به مرحله</h3>
-					<ol class="phases">
-						<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">۰</span><span>مخزن، مجوز، مدل تهدید</span><span class="phase-state">انجام شد</span></li>
-						<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">۱</span><span>موتور هسته</span><span class="phase-state">انجام شد</span></li>
-						<li data-state="now"><span class="stroke" aria-hidden="true"></span><span class="phase-n">۲</span><span>پروتکل جدید و موتور کلاینت</span><span class="phase-state">در حال انجام</span></li>
-						<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">۳</span><span>سیستم طراحی</span><span class="phase-state">انجام شد</span></li>
-						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۴</span><span>پنل وب</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
-						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۵</span><span>برنامهٔ دسکتاپ، آلفای عمومی</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
-						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۶</span><span>افزونهٔ اختیاری Xray</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
-						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۷</span><span>برنامهٔ اندروید</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
-						<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">۸</span><span>مستندات کامل، نسخه‌های امضاشده</span><span class="phase-state">برنامه‌ریزی‌شده</span></li>
-					</ol>
-				</div>
-			</div>
-		</div>
-	</section>
 	<section class="section" aria-labelledby="involved">
 		<div class="wrap">
 			<div class="intro">
@@ -132,7 +133,7 @@
 					<li>
 						<a href="https://veilway-project.github.io/veilway-docs/fa/">مستندات</a>
 						<p>مشخصات پروتکل، مرجع پیکربندی و راهنماها، به فارسی و انگلیسی. بسیاری از صفحه‌ها هنوز فقط طرح کلی دارند.</p>
-						<span class="vw-code">veilway-project.github.io/veilway-docs</span>
+						<span class="vw-code">veilway-project.github.io/<wbr>veilway-docs</span>
 					</li>
 					<li>
 						<a href="https://github.com/veilway-project/veilway/blob/main/SECURITY.md">سیاست امنیتی</a>
