@@ -25,7 +25,7 @@ It uses the design system from [veilway-ui](https://github.com/veilway-project/v
 | `fa/index.html` | The Persian page, right to left |
 | `site.css` | Design tokens, both color schemes, and the page's own rules |
 | `fonts/` | Atkinson Hyperlegible Next and Mono, Vazirmatn, and their licenses |
-| `img/` | The icon and two client screenshots |
+| `img/` | The icon, the apple-touch icon, the link preview images (English and Persian) and two client screenshots |
 
 ## Changing it
 
