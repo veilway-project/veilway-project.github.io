@@ -89,14 +89,15 @@
 						<li>A server that runs WireGuard for many users over UDP and WebSocket, with routing rules, quotas, and config reload without a restart.</li>
 						<li>The new protocol on both ends: a control channel inside the tunnel and four transports, with a client whose TLS handshake looks like a common browser's.</li>
 						<li>The client's tunnel layers for Linux, Windows and macOS, with a kill switch that blocks traffic when the tunnel fails. The Windows and macOS layers have not run on a real machine yet.</li>
-						<li>A web panel in English and Persian: admin sign-in with two-factor, users and devices, subscription links and QR codes, the server's inbounds, exits and routing, linking two servers, traffic history, and an admin API with tokens.</li>
+						<li>A web panel in English and Persian: admin sign-in with two-factor, users and devices, subscription links and QR codes, the server's inbounds, exits and routing, linking two servers, traffic history, and an admin API with tokens. It has not run against a real server yet.</li>
+						<li>A desktop app for Linux, Windows and macOS, in English and Persian. It imports a subscription by link or QR code, asks plainly before anything risky, connects with one button, and shows live speed, usage, the exit and the provider's card. The tunnel runs in a small helper that asks for admin rights once, and the app can start at login. It has not connected on a real machine yet.</li>
 						<li>Links between two servers, paired with codes both operators compare.</li>
 						<li>The design system for the panel and the apps.</li>
 					</ul>
 				</div>
 				<div>
 					<h3>Next</h3>
-					<p class="next">The desktop app and the Android app, built now for the first public alpha.</p>
+					<p class="next">The Android app, built now. Then the first release, v0.1.0-alpha, and a full test on a fresh server.</p>
 					<h3 class="install">How it will install</h3>
 					<p class="next">The first release is coming. Once it is out, one script installs the server, the panel or both from a menu, checks every download's signature with minisign, and later updates and backs it up.</p>
 					<p class="next cmd"><code class="vw-code">curl -fsSL https://raw.githubusercontent.com/veilway-project/veilway/main/scripts/veilway.sh | sudo bash</code></p>
