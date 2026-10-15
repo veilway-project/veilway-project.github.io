@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Veilway</title>
-<meta name="description" content="Veilway is open-source software for running your own VPN server on a censored or hostile network. Experimental, Apache-2.0.">
+<meta name="description" content="Veilway is open-source software for running your own VPN server on a censored or hostile network. The first alpha runs a server with its web panel and connects from Linux, macOS, Windows and Android. Apache-2.0.">
 <meta name="color-scheme" content="dark light">
 <link rel="icon" href="img/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -21,18 +21,18 @@
 <meta property="og:title" content="Veilway: a VPN for networks that block VPNs">
 <meta property="og:description" content="Veilway is open-source software for running your own VPN server on a censored or hostile network, for yourself or a small group.">
 <meta property="og:url" content="https://veilway-project.github.io/">
-<meta property="og:image" content="https://veilway-project.github.io/img/preview-2026-10-15.png">
+<meta property="og:image" content="https://veilway-project.github.io/img/preview-2026-10-15-alpha.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Veilway logo above the words A VPN for networks that block VPNs, and nine slanted strokes for the project's phases, five done and three under way">
+<meta property="og:image:alt" content="The Veilway logo above the words A VPN for networks that block VPNs, and nine slanted strokes for the project's phases, seven of them done">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="fa_IR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Veilway: a VPN for networks that block VPNs">
 <meta name="twitter:description" content="Veilway is open-source software for running your own VPN server on a censored or hostile network, for yourself or a small group.">
-<meta name="twitter:image" content="https://veilway-project.github.io/img/preview-2026-10-15.png">
-<meta name="twitter:image:alt" content="The Veilway logo above the words A VPN for networks that block VPNs, and nine slanted strokes for the project's phases, five done and three under way">
+<meta name="twitter:image" content="https://veilway-project.github.io/img/preview-2026-10-15-alpha.png">
+<meta name="twitter:image:alt" content="The Veilway logo above the words A VPN for networks that block VPNs, and nine slanted strokes for the project's phases, seven of them done">
 <link rel="preload" href="fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
 </head>
@@ -53,13 +53,13 @@
 		<h1 id="title">A VPN for networks that block VPNs</h1>
 		<div class="hero-body">
 			<div>
-				<p class="lede">Veilway is open-source software for running your own VPN server on a censored or hostile network, for yourself or a small group. One project holds the Rust core, a web panel and the apps.</p>
+				<p class="lede">Veilway is open-source software for running your own VPN server on a censored or hostile network, for yourself or a small group. The first release, v0.1.0-alpha, installs a server and its web panel with one script or Docker, and connects from Linux, macOS, Windows and Android.</p>
 				<div class="actions">
-					<a class="vw-button" data-variant="primary" href="https://github.com/veilway-project/veilway">Read the code</a>
-					<a class="vw-button" href="https://veilway-project.github.io/veilway-docs/">Read the docs</a>
+					<a class="vw-button" data-variant="primary" href="https://github.com/veilway-project/veilway/releases">Download the apps</a>
+					<a class="vw-button" href="#install">Install a server</a>
 				</div>
 			</div>
-			<p class="caveat" role="note"><strong><svg class="vw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4.5"/><path d="M12 17.2v.1"/></svg>Experimental</strong>It has had no outside security review and there is no release to download yet. Today it is for operators and developers who build from source.</p>
+			<p class="caveat" role="note"><strong><svg class="vw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4.5"/><path d="M12 17.2v.1"/></svg>Alpha</strong>It has had no outside security review. The macOS and Windows apps are built but have not been tested on a real machine yet. Expect bugs, and tell us about them.</p>
 		</div>
 	</section>
 	<section class="section" aria-labelledby="status">
@@ -75,33 +75,33 @@
 					<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">1</span><span class="phase-name">Core engine</span><span class="phase-state">Done</span></li>
 					<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">2</span><span class="phase-name">New protocol and client engine</span><span class="phase-state">Done</span></li>
 					<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">3</span><span class="phase-name">Design system</span><span class="phase-state">Done</span></li>
-					<li data-state="now"><span class="stroke" aria-hidden="true"></span><span class="phase-n">4</span><span class="phase-name">Web panel</span><span class="phase-state">In progress</span></li>
-					<li data-state="now"><span class="stroke" aria-hidden="true"></span><span class="phase-n">5</span><span class="phase-name">Desktop app, public alpha</span><span class="phase-state">In progress</span></li>
-					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">6</span><span class="phase-name">Optional Xray add-on</span><span class="phase-state">Planned</span></li>
-					<li data-state="now"><span class="stroke" aria-hidden="true"></span><span class="phase-n">7</span><span class="phase-name">Android app</span><span class="phase-state">In progress</span></li>
-					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">8</span><span class="phase-name">Full docs, signed releases</span><span class="phase-state">Planned</span></li>
+					<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">4</span><span class="phase-name">Web panel</span><span class="phase-state">Done</span></li>
+					<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">5</span><span class="phase-name">Desktop app, public alpha</span><span class="phase-state">Done</span></li>
+					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">6</span><span class="phase-name">Optional Xray add-on</span><span class="phase-state">Next</span></li>
+					<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">7</span><span class="phase-name">Android app</span><span class="phase-state">Done</span></li>
+					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">8</span><span class="phase-name">Full docs, SDK examples, hardening</span><span class="phase-state">Planned</span></li>
 				</ol>
 			</div>
 			<div class="status">
 				<div>
 					<h3>Works today</h3>
 					<ul class="done-list">
-						<li>A server that runs WireGuard for many users over UDP and WebSocket, with routing rules, quotas, and config reload without a restart.</li>
-						<li>The new protocol on both ends: a control channel inside the tunnel and four transports, with a client whose TLS handshake looks like a common browser's.</li>
-						<li>The client's tunnel layers for Linux, Windows and macOS, with a kill switch that blocks traffic when the tunnel fails. The Windows and macOS layers have not run on a real machine yet.</li>
-						<li>A web panel in English and Persian: admin sign-in with two-factor, users and devices, subscription links and QR codes, the server's inbounds, exits and routing, linking two servers, traffic history, and an admin API with tokens. It has not run against a real server yet.</li>
-						<li>A desktop app for Linux, Windows and macOS, in English and Persian. It imports a subscription by link or QR code, asks plainly before anything risky, connects with one button, and shows live speed, usage, the exit and the provider's card. The tunnel runs in a small helper that asks for admin rights once, and the app can start at login. It has not connected on a real machine yet.</li>
+						<li>A server that runs WireGuard for many users over obfuscated UDP, TLS, WebSocket or a fronted HTTP path, with routing rules, quotas, and config reload without a restart. Someone who probes it without an account gets the operator's own website.</li>
+						<li>A web panel in English and Persian: admin sign-in with two-factor, users and devices, subscription links and QR codes, the server's inbounds, exits and routing, linking two servers, traffic history, and an admin API with tokens.</li>
+						<li>Desktop apps for Linux, macOS and Windows, in English and Persian. They import a subscription by link or QR code, ask plainly before anything risky, connect with one button, and show live speed, usage and the exit. A kill switch blocks traffic when the tunnel fails.</li>
+						<li>An Android app on the same engine, with the same screens in both languages.</li>
 						<li>Links between two servers, paired with codes both operators compare.</li>
-						<li>The design system for the panel and the apps.</li>
 					</ul>
 				</div>
 				<div>
-					<h3>Next</h3>
-					<p class="next">The Android app, built now. Then the first release, v0.1.0-alpha, and a full test on a fresh server.</p>
-					<h3 class="install">How it will install</h3>
-					<p class="next">The first release is coming. Once it is out, one script installs the server, the panel or both from a menu, checks every download's signature with minisign, and later updates and backs it up.</p>
+					<h3 id="install">Install a server</h3>
+					<p class="next">One script installs the node, the panel or both on a Linux server, and checks every download's signature with minisign before it installs anything. Run it as root:</p>
 					<p class="next cmd"><code class="vw-code">curl -fsSL https://raw.githubusercontent.com/veilway-project/veilway/main/scripts/veilway.sh | sudo bash</code></p>
-					<p class="next">Docker images with a compose file are another option: <code class="vw-code">ghcr.io/veilway-project/veilway</code> and <code class="vw-code">ghcr.io/veilway-project/veilway-panel</code>.</p>
+					<p class="next">Docker images with a compose file are another option: <code class="vw-code">ghcr.io/veilway-project/veilway</code> and <code class="vw-code">ghcr.io/veilway-project/veilway-panel</code>. The <a href="https://veilway-project.github.io/veilway-docs/getting-started/">getting started guide</a> walks through both.</p>
+					<h3 class="install">Downloads</h3>
+					<p class="next">The apps for Linux, macOS, Windows and Android, and the node, are on the <a href="https://github.com/veilway-project/veilway/releases">Veilway releases page</a>. The panel has <a href="https://github.com/veilway-project/veilway-panel/releases">its own releases</a>. The install script fetches both for you.</p>
+					<h3 class="install">Next</h3>
+					<p class="next">The optional Xray add-on: off by default, it runs the official Xray release beside Veilway so a server and the apps can also speak VLESS, VMess, Trojan and Shadowsocks. After that, more HTTP shapes for the fronted path, bonded connections for networks that slow down each connection, HTTP/2 on the TLS and WebSocket transports, and a mode where the server shows a real site's handshake.</p>
 				</div>
 			</div>
 		</div>
@@ -118,7 +118,7 @@
 						<img src="img/client-dark-en.png" width="360" height="721" alt="The client window, connected, in the dark scheme and in English">
 						<img src="img/client-light-fa.png" width="360" height="721" alt="The client window, connected, in the light scheme and in Persian">
 					</div>
-					<figcaption>The client window from the design system the apps will use, in both schemes and both languages. Every name and number in it is made up.</figcaption>
+					<figcaption>The client window from the design system the apps use, in both schemes and both languages. Every name and number in it is made up.</figcaption>
 				</figure>
 				<ul class="points">
 					<li>
@@ -155,7 +155,7 @@
 				<ul class="links">
 					<li>
 						<a href="https://github.com/veilway-project/veilway">Code</a>
-						<p>The core, the control API, the client and the install script. The README has a quick start for building from source.</p>
+						<p>The core, the control API, the apps and the install script. Its releases page has the apps and the node.</p>
 						<span class="vw-code">github.com/veilway-project/veilway</span>
 					</li>
 					<li>
