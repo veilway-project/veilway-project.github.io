@@ -25,14 +25,14 @@
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Veilway logo above the words A VPN for networks that block VPNs, and nine slanted strokes for the project's phases, three done and one under way">
+<meta property="og:image:alt" content="The Veilway logo above the words A VPN for networks that block VPNs, and nine slanted strokes for the project's phases, three done and four under way">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="fa_IR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Veilway: a VPN for networks that block VPNs">
 <meta name="twitter:description" content="Veilway is open-source software for running your own VPN server on a censored or hostile network, for yourself or a small group.">
 <meta name="twitter:image" content="https://veilway-project.github.io/img/preview.png">
-<meta name="twitter:image:alt" content="The Veilway logo above the words A VPN for networks that block VPNs, and nine slanted strokes for the project's phases, three done and one under way">
+<meta name="twitter:image:alt" content="The Veilway logo above the words A VPN for networks that block VPNs, and nine slanted strokes for the project's phases, three done and four under way">
 <link rel="preload" href="fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
 </head>
@@ -59,7 +59,7 @@
 					<a class="vw-button" href="https://veilway-project.github.io/veilway-docs/">Read the docs</a>
 				</div>
 			</div>
-			<p class="caveat" role="note"><strong><svg class="vw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4.5"/><path d="M12 17.2v.1"/></svg>Experimental</strong>It has had no outside security review, no app speaks its new protocol yet, and there is nothing to download. Today it is for operators and developers who build from source.</p>
+			<p class="caveat" role="note"><strong><svg class="vw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4.5"/><path d="M12 17.2v.1"/></svg>Experimental</strong>It has had no outside security review and there is no release to download yet. Today it is for operators and developers who build from source.</p>
 		</div>
 	</section>
 	<section class="section" aria-labelledby="status">
@@ -75,10 +75,10 @@
 					<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">1</span><span class="phase-name">Core engine</span><span class="phase-state">Done</span></li>
 					<li data-state="now"><span class="stroke" aria-hidden="true"></span><span class="phase-n">2</span><span class="phase-name">New protocol and client engine</span><span class="phase-state">In progress</span></li>
 					<li data-state="done"><span class="stroke" aria-hidden="true"></span><span class="phase-n">3</span><span class="phase-name">Design system</span><span class="phase-state">Done</span></li>
-					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">4</span><span class="phase-name">Web panel</span><span class="phase-state">Planned</span></li>
-					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">5</span><span class="phase-name">Desktop app, public alpha</span><span class="phase-state">Planned</span></li>
+					<li data-state="now"><span class="stroke" aria-hidden="true"></span><span class="phase-n">4</span><span class="phase-name">Web panel</span><span class="phase-state">In progress</span></li>
+					<li data-state="now"><span class="stroke" aria-hidden="true"></span><span class="phase-n">5</span><span class="phase-name">Desktop app, public alpha</span><span class="phase-state">In progress</span></li>
 					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">6</span><span class="phase-name">Optional Xray add-on</span><span class="phase-state">Planned</span></li>
-					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">7</span><span class="phase-name">Android app</span><span class="phase-state">Planned</span></li>
+					<li data-state="now"><span class="stroke" aria-hidden="true"></span><span class="phase-n">7</span><span class="phase-name">Android app</span><span class="phase-state">In progress</span></li>
 					<li><span class="stroke" aria-hidden="true"></span><span class="phase-n">8</span><span class="phase-name">Full docs, signed releases</span><span class="phase-state">Planned</span></li>
 				</ol>
 			</div>
@@ -87,15 +87,20 @@
 					<h3>Works today</h3>
 					<ul class="done-list">
 						<li>A server that runs WireGuard for many users over UDP and WebSocket, with routing rules, quotas, and config reload without a restart.</li>
-						<li>The server side of the new protocol: a control channel inside the tunnel and four transports, plus a client library for them that no app uses yet.</li>
+						<li>The new protocol on both ends: a control channel inside the tunnel and four transports, with a client whose TLS handshake looks like a common browser's.</li>
+						<li>The client's tunnel layers for Linux, Windows and macOS, with a kill switch that blocks traffic when the tunnel fails. The Windows and macOS layers have not run on a real machine yet.</li>
+						<li>A web panel in English and Persian: admin sign-in with two-factor, users and devices, subscription links and QR codes, the server's inbounds, exits and routing, linking two servers, traffic history, and an admin API with tokens.</li>
 						<li>Links between two servers, paired with codes both operators compare.</li>
-						<li>A Windows desktop app that reads a normal WireGuard file. It does not speak the new protocol.</li>
-						<li>The design system for the panel and the apps, which nothing uses yet.</li>
+						<li>The design system for the panel and the apps.</li>
 					</ul>
 				</div>
 				<div>
 					<h3>Next</h3>
-					<p class="next">The client engine for Windows, macOS and Linux. After it come the web panel, the desktop app as the first public alpha, and the Android app.</p>
+					<p class="next">The desktop app and the Android app, built now for the first public alpha.</p>
+					<h3 class="install">How it will install</h3>
+					<p class="next">The first release is coming. Once it is out, one script installs the server, the panel or both from a menu, checks every download's signature with minisign, and later updates and backs it up.</p>
+					<p class="next cmd"><code class="vw-code">curl -fsSL https://raw.githubusercontent.com/veilway-project/veilway/main/scripts/veilway.sh | sudo bash</code></p>
+					<p class="next">Docker images with a compose file are another option: <code class="vw-code">ghcr.io/veilway-project/veilway</code> and <code class="vw-code">ghcr.io/veilway-project/veilway-panel</code>.</p>
 				</div>
 			</div>
 		</div>
@@ -129,7 +134,7 @@
 					</li>
 					<li>
 						<h3>Enter one server, leave from another</h3>
-						<p>Two servers can be linked, so users connect to one and their traffic leaves from the other. The operators pair them with two codes and compare a fingerprint. The core does this today, and the panel will manage it.</p>
+						<p>Two servers can be linked, so users connect to one and their traffic leaves from the other. The operators pair them with two codes and compare a fingerprint, in the panel or on the command line.</p>
 					</li>
 					<li>
 						<h3>English and Persian from the start</h3>
@@ -149,8 +154,13 @@
 				<ul class="links">
 					<li>
 						<a href="https://github.com/veilway-project/veilway">Code</a>
-						<p>The core, the control API and the desktop app. The README has a quick start for building from source.</p>
+						<p>The core, the control API, the client and the install script. The README has a quick start for building from source.</p>
 						<span class="vw-code">github.com/veilway-project/veilway</span>
+					</li>
+					<li>
+						<a href="https://github.com/veilway-project/veilway-panel">Panel</a>
+						<p>The web panel for running a server: users, devices, subscription links and the admin API.</p>
+						<span class="vw-code">github.com/veilway-project/<wbr>veilway-panel</span>
 					</li>
 					<li>
 						<a href="https://veilway-project.github.io/veilway-docs/">Docs</a>
@@ -169,7 +179,7 @@
 					</li>
 					<li>
 						<a href="https://github.com/veilway-project">All repositories</a>
-						<p>The core, the docs and the design system, each in its own repository.</p>
+						<p>The core, the panel, the docs and the design system, each in its own repository.</p>
 						<span class="vw-code">github.com/veilway-project</span>
 					</li>
 				</ul>

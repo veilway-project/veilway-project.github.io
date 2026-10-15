@@ -34,6 +34,7 @@ Edit the files and open `index.html` in a browser, or serve the folder with any 
 ## Related
 
 - [veilway](https://github.com/veilway-project/veilway): the core, the control API and the apps
+- [veilway-panel](https://github.com/veilway-project/veilway-panel): the web panel for running a node
 - [veilway-docs](https://github.com/veilway-project/veilway-docs): the docs, published at [veilway-project.github.io/veilway-docs](https://veilway-project.github.io/veilway-docs/)
 - [veilway-ui](https://github.com/veilway-project/veilway-ui): the design system and translations
 
