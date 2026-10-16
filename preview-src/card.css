@@ -10,8 +10,8 @@ body::before { content: ""; position: absolute; inset: 0; z-index: -1; backgroun
 .brand img { inline-size: 80px; block-size: 80px; }
 h1 { margin-block-start: 34px; max-inline-size: 900px; text-align: center; font-size: 68px; line-height: 1.06; font-weight: 680; letter-spacing: -0.032em; text-wrap: balance; }
 :lang(fa) h1 { font-size: 66px; line-height: 1.45; letter-spacing: 0; font-weight: 720; margin-block-start: 22px; }
-/* The plan as on the page: nine strokes at the icon's slant standing on one line. Filled is done, half is under way, outline is planned. */
-/* The top of each stroke leans left in both directions, as on the page, so the left padding is wider. */
+/* Decoration: nine strokes at the icon's slant standing on one line, filled or outlined. */
+/* The top of each stroke leans left in both directions, so the left padding is wider. */
 .phases { position: absolute; bottom: 70px; left: 50%; translate: -50% 0; display: flex; gap: 50px; padding-left: 80px; padding-right: 20px; border-block-end: 2px solid color-mix(in srgb, var(--line) 70%, transparent); }
 .phases i { inline-size: 28px; block-size: 124px; border: 2.5px solid color-mix(in srgb, var(--line) 72%, transparent); border-radius: 2px; transform: skewX(var(--slant)); transform-origin: bottom; }
 .phases .done { border-color: var(--ink); background: var(--ink); }
