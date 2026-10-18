@@ -38,15 +38,17 @@
 </head>
 <body class="vw-root vw-backdrop" data-fixed>
 <a class="skip" href="#main">رفتن به محتوا</a>
-<header class="wrap top">
-	<a class="brand" href="./"><img src="../img/icon.svg" alt="" width="36" height="36">Veilway</a>
-	<nav aria-label="سایت">
-		<ul>
-			<li><a href="https://github.com/veilway-project/veilway">کد</a></li>
-			<li class="doc-link"><a href="https://veilway-project.github.io/veilway-docs/fa/">مستندات</a></li>
-			<li><a class="lang" href="../" hreflang="en" lang="en">English</a></li>
-		</ul>
-	</nav>
+<header class="wrap head">
+	<div class="top vw-glass" data-layer="chrome">
+		<a class="brand" href="./"><img src="../img/icon.svg" alt="" width="32" height="32">Veilway</a>
+		<nav aria-label="سایت">
+			<ul>
+				<li class="code-link"><a href="https://github.com/veilway-project/veilway">کد</a></li>
+				<li><a href="https://veilway-project.github.io/veilway-docs/fa/">مستندات</a></li>
+				<li><a class="lang" href="../" hreflang="en" lang="en">English</a></li>
+			</ul>
+		</nav>
+	</div>
 </header>
 <main id="main">
 	<section class="wrap hero" aria-labelledby="title">
@@ -55,55 +57,11 @@
 			<div>
 				<p class="lede">Veilway نرم‌افزاری متن‌باز برای راه‌اندازی سرور VPN شخصی روی شبکه‌ای سانسورشده یا ناامن است، برای خودتان یا یک گروه کوچک. نسخهٔ فعلی، <bdi dir="ltr">v0.2.0-alpha</bdi>، سرور و پنل وب آن را با یک اسکریپت یا Docker نصب می‌کند و از لینوکس، macOS، ویندوز و اندروید به آن وصل می‌شود.</p>
 				<div class="actions">
-					<a class="vw-button" data-variant="primary" href="https://github.com/veilway-project/veilway/releases/tag/v0.2.0-alpha">دانلود برنامه‌ها</a>
+					<a class="vw-button" data-variant="primary" href="#apps">دانلود برنامه‌ها</a>
 					<a class="vw-button" href="#install">نصب سرور</a>
 				</div>
 			</div>
 			<p class="caveat" role="note"><strong><svg class="vw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4.5"/><path d="M12 17.2v.1"/></svg>آلفا</strong>هنوز هیچ بازبینی امنیتی بیرونی نداشته است. همهٔ ترنسپورت‌ها در رده‌بندی Detectable هستند. برنامه‌های macOS و ویندوز فقط در CI ساخته و آزمایش شده‌اند و هرگز روی یک دستگاه واقعی به گره وصل نشده‌اند. منتظر باگ باشید و آن‌ها را به ما گزارش کنید.</p>
-		</div>
-	</section>
-	<section class="section" aria-labelledby="status">
-		<div class="wrap">
-			<div class="intro">
-				<h2 id="status">کار به کجا رسیده</h2>
-				<p>جایی که از کار افتادن Veilway شما را به خطر می‌اندازد، به آن تکیه نکنید. همهٔ ترنسپورت‌ها در رده‌بندی Detectable هستند: شبکه‌ای که با دقت نگاه کند می‌تواند آن‌ها را از ترافیک عادی تشخیص دهد. هیچ بخشی از آن در برابر بازرسی عمیق بسته‌ها (DPI) یا کاوش فعال آزموده نشده، و مشخصات پروتکلش پیش‌نویسی است که فقط خود پروژه بازبینی‌اش کرده است.</p>
-			</div>
-			<div class="status">
-				<div>
-					<h3>آنچه امروز کار می‌کند</h3>
-					<ul class="done-list">
-						<li>سروری که WireGuard را برای کاربران زیادی روی پنج ترنسپورت اجرا می‌کند: UDP ساده، UDP مبهم‌سازی‌شده، TLS، WebSocket و یک مسیر HTTP از نوع fronted. کلاینت روی TLS، WebSocket و fronted مثل Chrome با HTTP/2 حرف می‌زند و گره آن را وقتی می‌دهد که <bdi dir="ltr"><code class="vw-code">http2</code></bdi> را روشن کنید. WebSocket و fronted پشت وب‌سرور خودتان کار می‌کنند و پنل برای شکل‌های مسیر fronted پیش‌تنظیم دارد. قانون‌های مسیریابی، سهمیهٔ مصرف و بارگذاری دوبارهٔ پیکربندی بدون راه‌اندازی دوباره را دارد. کسی که بدون حساب کاربری سرور را کاوش کند، وب‌سایت خود اپراتور را می‌بیند.</li>
-						<li>یک پنل وب به فارسی و انگلیسی: ورود مدیر با گذرواژه و کد یک‌بارمصرف، کاربران، دستگاه‌ها و گروه‌ها، لینک‌های اشتراک و کد QR، ورودی‌ها، خروجی‌ها (یک خروجی پیش‌فرض و خروجی جدا برای هر کاربر)، مسیریابی، راه‌اندازی هدایت‌شده برای گره ورودی و تونل معکوس، رله‌ها، تاریخچهٔ ترافیک، DNS و گزارش‌ها، اعلان برای همهٔ دستگاه‌ها، چند مدیر، پشتیبان‌گیری و بازیابی، یک دکمهٔ به‌روزرسانی، و یک API مدیریتی با توکن. پنل فقط روی loopback گوش می‌دهد و TLS را وب‌سرور جلوی آن فراهم می‌کند.</li>
-						<li>اشتراک‌هایی که در راه خصوصی می‌مانند: درخواست و پاسخ سرتاسر رمزنگاری می‌شوند (کلیدهای Oblivious HTTP روی HPKE)، پس آینهٔ رله چیزی از آن‌ها نمی‌بیند. لینک، کلید دروازهٔ سرور را دارد. نقطه‌های پایانی نام‌دار در <bdi dir="ltr"><code class="vw-code">sub_path/&lt;name&gt;</code></bdi> در دسترس‌اند و برای هر کاربر و هر گروه تعیین می‌شوند. آینه‌های ایستا و آینه‌های رله نشانی پشتیبان به‌روزرسانی‌اند و برنامه پیش از استفاده از آن‌ها می‌پرسد. اشتراک را می‌شود با یک فایل <bdi dir="ltr"><code class="vw-code">.vwsealed</code></bdi> با گذرواژه هم فرستاد.</li>
-						<li>برنامه‌های دسکتاپ برای لینوکس، macOS و ویندوز، به فارسی و انگلیسی. اشتراک را با لینک، فایل یا تصویر QR وارد می‌کنند، پیش از هر کار پرخطر به زبان ساده می‌پرسند، با یک دکمه وصل می‌شوند، و سرعت لحظه‌ای، مصرف، خروجی و جزئیات اتصال را نشان می‌دهند. «اشتراک‌گذاری» فقط لینک را می‌فرستد و هرگز کلیدهای دستگاه را نمی‌فرستد. اگر تونل از کار بیفتد، قطع اضطراری ترافیک را می‌بندد، و برنامه خودش را به‌روز می‌کند.</li>
-						<li>یک برنامهٔ اندروید (arm64) روی همان موتور، با همان صفحه‌ها به هر دو زبان و به‌روزرسان خودش. هنوز نمی‌تواند کد QR را با دوربین بخواند.</li>
-						<li>اتصال دو سرور به هم، با کدهایی که هر دو اپراتور با هم مقایسه می‌کنند. یک گره می‌تواند یک پورت TCP یا UDP را از راه یک پیوند جلو ببرد، با محدودیت برای هر مبدأ. رله را می‌شود برای هر کاربر و هر گروه تعیین کرد.</li>
-						<li>بسته‌های آفلاین: یک فایل امضاشده با به‌روزرسانی برنامه، سندهای اشتراک و اطلاعیه‌ها، که با <bdi dir="ltr"><code class="vw-code">veilway bundle make</code></bdi> ساخته و با <bdi dir="ltr"><code class="vw-code">veilway bundle inspect</code></bdi> بررسی می‌شود. برنامه‌های دسکتاپ و اندروید محتوای آن را نشان می‌دهند و بدون ضربهٔ کاربر چیزی اعمال نمی‌شود.</li>
-						<li>پیوندهای Xray در برنامهٔ دسکتاپ روی لینوکس، macOS و ویندوز (vless، vmess، trojan و ss). افزونه به درخواست و از یک انتشار پین‌شده نصب می‌شود، و این پروفایل‌ها «فقط TCP و UDP» نشان داده می‌شوند.</li>
-						<li>حالت سایت قرضی، قابلیتی آلفا که به‌طور پیش‌فرض خاموش است: اتصالی که خودش را اثبات نکند، بایت به بایت به یک وب‌سایت واقعی منتقل می‌شود. پنل آن را تنظیم می‌کند و برنامه‌ها فقط بعد از روشن کردن «ترنسپورت‌های آلفا» از آن استفاده می‌کنند. فقط خود پروژه آن را بازبینی کرده و در رده Detectable است.</li>
-						<li>یک افزونهٔ اختیاری Xray که به‌طور پیش‌فرض خاموش است: گره نسخهٔ رسمی Xray را به‌عنوان فرایند فرزند اجرا می‌کند تا برنامه‌های استاندارد با VLESS و Trojan روی TLS یا با Shadowsocks، روی TCP و UDP، وصل شوند. ترافیک آن‌ها در همان سهمیه‌ها حساب می‌شود و از همان قانون‌ها پیروی می‌کند. Veilway پروژه‌ای جداست و این افزونه جایگزین Xray نیست.</li>
-					</ul>
-					<h3 class="install">چه چیزی آزموده شده</h3>
-					<ul class="done-list">
-						<li>سرور و پنل: آزمون alpha یک سرور تازهٔ systemd را از فایل‌های امضاشدهٔ انتشار نصب می‌کند و یک کلاینت را وصل می‌کند، و ۵۵ بررسی را می‌گذراند. آزمون Xray ۱۱۹ بررسی را می‌گذراند.</li>
-						<li>لینوکس: یک بررسی ۷۰‌نقطه‌ای در Docker، با یک گره و کلاینت واقعی.</li>
-						<li>اندروید: روی یک گوشی واقعی با یک گرهٔ دمو به کار رفته است.</li>
-						<li>ویندوز: آزمون‌های واحد و یک آزمون دودی روی یک runner ویندوز. کارت شبکه، مسیرها، قاعدهٔ DNS و قطع اضطراری اثر می‌کنند و چیزی نشت نمی‌کند. هرگز روی یک PC واقعی به گره وصل نشده است.</li>
-						<li>macOS: آزمون‌های واحد روی یک runner مک. هرگز روی یک Mac واقعی اجرا نشده است.</li>
-					</ul>
-				</div>
-				<div>
-					<h3 id="install">نصب سرور</h3>
-					<p class="next">یک اسکریپت گره، پنل یا هر دو را روی یک سرور لینوکس نصب می‌کند و پیش از نصب هر چیزی، امضای هر فایل دانلودی را با minisign بررسی می‌کند. آن را با دسترسی root اجرا کنید:</p>
-					<p class="next cmd"><code class="vw-code">curl -fsSL https://raw.githubusercontent.com/veilway-project/veilway/main/scripts/veilway.sh | sudo bash</code></p>
-					<p class="next">همین اسکریپت، با نام <bdi dir="ltr"><code class="vw-code">veilway.sh</code></bdi>، آینهٔ رله را هم نصب می‌کند (<bdi dir="ltr"><code class="vw-code">install mirror</code></bdi>)، یک رله (<bdi dir="ltr"><code class="vw-code">install relay</code></bdi>)، افزونهٔ Xray را اضافه می‌کند (<bdi dir="ltr"><code class="vw-code">addon xray install</code></bdi>) و صفحه‌های مدیریت پنل را به مسیری تازه می‌برد (<bdi dir="ltr"><code class="vw-code">panel-prefix</code></bdi>).</p>
-					<p class="next">راه دیگر، ایمیج‌های Docker همراه با یک فایل compose است: <code class="vw-code">ghcr.io/veilway-project/veilway</code> و <code class="vw-code">ghcr.io/veilway-project/veilway-panel</code>. <a href="https://veilway-project.github.io/veilway-docs/fa/getting-started/">راهنمای شروع</a> هر دو راه را قدم به قدم توضیح می‌دهد.</p>
-					<h3 class="install">دانلود</h3>
-					<p class="next">برنامهٔ دسکتاپ برای ویندوز (نصب‌کننده) و لینوکس (<code class="vw-code">.deb</code> و <code class="vw-code">.rpm</code>)، برنامهٔ اندروید، و کلاینت خط فرمان و گره برای لینوکس، macOS و ویندوز در <a href="https://github.com/veilway-project/veilway/releases/tag/v0.2.0-alpha">صفحهٔ انتشار v0.2.0-alpha</a> هستند. آینه‌های نصب‌کننده امضا دارند و انتشار قدیمی‌تر را رد می‌کنند. پنل <a href="https://github.com/veilway-project/veilway-panel/releases">نسخه‌های جداگانهٔ خودش</a> را دارد. اسکریپت نصب هر دو را برایتان دانلود می‌کند.</p>
-					<h3 class="install">هنوز ساخته نشده</h3>
-					<p class="next">برنامهٔ اندروید هنوز به پیوندهای Xray وصل نمی‌شود، و افزونهٔ سرور VMess، Reality و خروجی‌های <bdi dir="ltr"><code class="vw-code">l3</code></bdi> یا <bdi dir="ltr"><code class="vw-code">chain</code></bdi> را ندارد. تونل تفکیکی (split tunneling) و ساخت‌های فروشگاه برای v0.3.0 برنامه‌ریزی شده‌اند. HTTP/2 و شکل‌های fronted هنوز پشت یک CDN واقعی اجرا نشده‌اند.</p>
-				</div>
-			</div>
 		</div>
 	</section>
 	<section class="section" aria-labelledby="different">
@@ -135,6 +93,81 @@
 						<p>سیستم طراحی و مستندات به هر دو زبان نوشته شده‌اند، با چیدمان راست‌به‌چپ، رقم‌های فارسی و تاریخ شمسی، و هر برنامه‌ای که روی آن‌ها ساخته شود هم همین‌طور است.</p>
 					</li>
 				</ul>
+				<div class="sheet vw-glass">
+					<h3>پنج ترنسپورت، یک تونل</h3>
+					<p>همهٔ ترنسپورت‌ها در رده‌بندی Detectable هستند: شبکه‌ای که با دقت نگاه کند می‌تواند آن‌ها را از ترافیک عادی تشخیص دهد.</p>
+					<ul class="transports">
+						<li><span>UDP ساده</span><span class="vw-code">udp</span></li>
+						<li><span>UDP مبهم‌سازی‌شده</span><span class="vw-code">udp-obfs</span></li>
+						<li><span>TLS</span><span class="vw-code">tls</span></li>
+						<li><span>WebSocket</span><span class="vw-code">ws</span></li>
+						<li><span>مسیر HTTP از نوع fronted</span><span class="vw-code">fronted</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section" aria-label="دو راه برای شروع">
+		<div class="wrap ways">
+			<div class="sheet vw-glass" id="install">
+				<h2>نصب سرور</h2>
+				<p>یک اسکریپت گره، پنل یا هر دو را روی یک سرور لینوکس نصب می‌کند و پیش از نصب هر چیزی، امضای هر فایل دانلودی را با minisign بررسی می‌کند. آن را با دسترسی root اجرا کنید:</p>
+					<div class="cmd vw-well"><code class="vw-code">curl -fsSL https://raw.githubusercontent.com/veilway-project/veilway/main/scripts/veilway.sh | sudo bash</code></div>
+				<p>همین اسکریپت، با نام <bdi dir="ltr"><code class="vw-code">veilway.sh</code></bdi>، آینهٔ رله را هم نصب می‌کند (<bdi dir="ltr"><code class="vw-code">install mirror</code></bdi>)، یک رله (<bdi dir="ltr"><code class="vw-code">install relay</code></bdi>)، افزونهٔ Xray را اضافه می‌کند (<bdi dir="ltr"><code class="vw-code">addon xray install</code></bdi>) و صفحه‌های مدیریت پنل را به مسیری تازه می‌برد (<bdi dir="ltr"><code class="vw-code">panel-prefix</code></bdi>).</p>
+					<p>راه دیگر، ایمیج‌های Docker همراه با یک فایل compose است: <code class="vw-code">ghcr.io/veilway-project/veilway</code> و <code class="vw-code">ghcr.io/veilway-project/veilway-panel</code>. <a href="https://veilway-project.github.io/veilway-docs/fa/getting-started/">راهنمای شروع</a> هر دو راه را قدم به قدم توضیح می‌دهد.</p>
+			</div>
+			<div class="sheet vw-glass" id="apps">
+				<h2>دانلود</h2>
+				<p>این‌ها در <a href="https://github.com/veilway-project/veilway/releases/tag/v0.2.0-alpha">صفحهٔ انتشار v0.2.0-alpha</a> هستند:</p>
+				<dl class="rows">
+					<div><dt>ویندوز</dt><dd>برنامهٔ دسکتاپ، به‌صورت نصب‌کننده.</dd></div>
+					<div><dt>لینوکس</dt><dd>برنامهٔ دسکتاپ، به‌صورت <code class="vw-code">.deb</code> و <code class="vw-code">.rpm</code>.</dd></div>
+					<div><dt>اندروید</dt><dd>برنامه، برای arm64.</dd></div>
+					<div><dt>لینوکس، macOS، ویندوز</dt><dd>کلاینت خط فرمان و گره.</dd></div>
+				</dl>
+				<p>آینه‌های نصب‌کننده امضا دارند و انتشار قدیمی‌تر را رد می‌کنند. پنل <a href="https://github.com/veilway-project/veilway-panel/releases">نسخه‌های جداگانهٔ خودش</a> را دارد. اسکریپت نصب هر دو را برایتان دانلود می‌کند.</p>
+				<div class="actions"><a class="vw-button" data-variant="primary" href="https://github.com/veilway-project/veilway/releases/tag/v0.2.0-alpha">باز کردن صفحهٔ انتشار</a></div>
+			</div>
+		</div>
+	</section>
+	<section class="section" aria-labelledby="status">
+		<div class="wrap">
+			<div class="intro">
+				<h2 id="status">کار به کجا رسیده</h2>
+				<p>جایی که از کار افتادن Veilway شما را به خطر می‌اندازد، به آن تکیه نکنید. همهٔ ترنسپورت‌ها در رده‌بندی Detectable هستند: شبکه‌ای که با دقت نگاه کند می‌تواند آن‌ها را از ترافیک عادی تشخیص دهد. هیچ بخشی از آن در برابر بازرسی عمیق بسته‌ها (DPI) یا کاوش فعال آزموده نشده، و مشخصات پروتکلش پیش‌نویسی است که فقط خود پروژه بازبینی‌اش کرده است.</p>
+			</div>
+			<div class="stand">
+				<div>
+					<h3>چه چیزی آزموده شده</h3>
+					<dl class="rows wide">
+						<div class="state"><dt><span class="mark" aria-hidden="true"></span>سرور و پنل</dt><dd>آزمون alpha یک سرور تازهٔ systemd را از فایل‌های امضاشدهٔ انتشار نصب می‌کند و یک کلاینت را وصل می‌کند، و ۵۵ بررسی را می‌گذراند. آزمون Xray ۱۱۹ بررسی را می‌گذراند.</dd></div>
+						<div class="state"><dt><span class="mark" aria-hidden="true"></span>لینوکس</dt><dd>یک بررسی ۷۰‌نقطه‌ای در Docker، با یک گره و کلاینت واقعی.</dd></div>
+						<div class="state"><dt><span class="mark" aria-hidden="true"></span>اندروید</dt><dd>روی یک گوشی واقعی با یک گرهٔ دمو به کار رفته است.</dd></div>
+						<div class="state" data-state="half"><dt><span class="mark" aria-hidden="true"></span>ویندوز</dt><dd>آزمون‌های واحد و یک آزمون دودی روی یک runner ویندوز. کارت شبکه، مسیرها، قاعدهٔ DNS و قطع اضطراری اثر می‌کنند و چیزی نشت نمی‌کند. هرگز روی یک PC واقعی به گره وصل نشده است.</dd></div>
+						<div class="state" data-state="none"><dt><span class="mark" aria-hidden="true"></span>macOS</dt><dd>آزمون‌های واحد روی یک runner مک. هرگز روی یک Mac واقعی اجرا نشده است.</dd></div>
+					</dl>
+				</div>
+				<div>
+					<details class="sheet vw-glass">
+						<summary>آنچه امروز کار می‌کند<svg class="vw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+						<ul class="done-list">
+						<li>سروری که WireGuard را برای کاربران زیادی روی پنج ترنسپورت اجرا می‌کند: UDP ساده، UDP مبهم‌سازی‌شده، TLS، WebSocket و یک مسیر HTTP از نوع fronted. کلاینت روی TLS، WebSocket و fronted مثل Chrome با HTTP/2 حرف می‌زند و گره آن را وقتی می‌دهد که <bdi dir="ltr"><code class="vw-code">http2</code></bdi> را روشن کنید. WebSocket و fronted پشت وب‌سرور خودتان کار می‌کنند و پنل برای شکل‌های مسیر fronted پیش‌تنظیم دارد. قانون‌های مسیریابی، سهمیهٔ مصرف و بارگذاری دوبارهٔ پیکربندی بدون راه‌اندازی دوباره را دارد. کسی که بدون حساب کاربری سرور را کاوش کند، وب‌سایت خود اپراتور را می‌بیند.</li>
+						<li>یک پنل وب به فارسی و انگلیسی: ورود مدیر با گذرواژه و کد یک‌بارمصرف، کاربران، دستگاه‌ها و گروه‌ها، لینک‌های اشتراک و کد QR، ورودی‌ها، خروجی‌ها (یک خروجی پیش‌فرض و خروجی جدا برای هر کاربر)، مسیریابی، راه‌اندازی هدایت‌شده برای گره ورودی و تونل معکوس، رله‌ها، تاریخچهٔ ترافیک، DNS و گزارش‌ها، اعلان برای همهٔ دستگاه‌ها، چند مدیر، پشتیبان‌گیری و بازیابی، یک دکمهٔ به‌روزرسانی، و یک API مدیریتی با توکن. پنل فقط روی loopback گوش می‌دهد و TLS را وب‌سرور جلوی آن فراهم می‌کند.</li>
+						<li>اشتراک‌هایی که در راه خصوصی می‌مانند: درخواست و پاسخ سرتاسر رمزنگاری می‌شوند (کلیدهای Oblivious HTTP روی HPKE)، پس آینهٔ رله چیزی از آن‌ها نمی‌بیند. لینک، کلید دروازهٔ سرور را دارد. نقطه‌های پایانی نام‌دار در <bdi dir="ltr"><code class="vw-code">sub_path/&lt;name&gt;</code></bdi> در دسترس‌اند و برای هر کاربر و هر گروه تعیین می‌شوند. آینه‌های ایستا و آینه‌های رله نشانی پشتیبان به‌روزرسانی‌اند و برنامه پیش از استفاده از آن‌ها می‌پرسد. اشتراک را می‌شود با یک فایل <bdi dir="ltr"><code class="vw-code">.vwsealed</code></bdi> با گذرواژه هم فرستاد.</li>
+						<li>برنامه‌های دسکتاپ برای لینوکس، macOS و ویندوز، به فارسی و انگلیسی. اشتراک را با لینک، فایل یا تصویر QR وارد می‌کنند، پیش از هر کار پرخطر به زبان ساده می‌پرسند، با یک دکمه وصل می‌شوند، و سرعت لحظه‌ای، مصرف، خروجی و جزئیات اتصال را نشان می‌دهند. «اشتراک‌گذاری» فقط لینک را می‌فرستد و هرگز کلیدهای دستگاه را نمی‌فرستد. اگر تونل از کار بیفتد، قطع اضطراری ترافیک را می‌بندد، و برنامه خودش را به‌روز می‌کند.</li>
+						<li>یک برنامهٔ اندروید (arm64) روی همان موتور، با همان صفحه‌ها به هر دو زبان و به‌روزرسان خودش. هنوز نمی‌تواند کد QR را با دوربین بخواند.</li>
+						<li>اتصال دو سرور به هم، با کدهایی که هر دو اپراتور با هم مقایسه می‌کنند. یک گره می‌تواند یک پورت TCP یا UDP را از راه یک پیوند جلو ببرد، با محدودیت برای هر مبدأ. رله را می‌شود برای هر کاربر و هر گروه تعیین کرد.</li>
+						<li>بسته‌های آفلاین: یک فایل امضاشده با به‌روزرسانی برنامه، سندهای اشتراک و اطلاعیه‌ها، که با <bdi dir="ltr"><code class="vw-code">veilway bundle make</code></bdi> ساخته و با <bdi dir="ltr"><code class="vw-code">veilway bundle inspect</code></bdi> بررسی می‌شود. برنامه‌های دسکتاپ و اندروید محتوای آن را نشان می‌دهند و بدون ضربهٔ کاربر چیزی اعمال نمی‌شود.</li>
+						<li>پیوندهای Xray در برنامهٔ دسکتاپ روی لینوکس، macOS و ویندوز (vless، vmess، trojan و ss). افزونه به درخواست و از یک انتشار پین‌شده نصب می‌شود، و این پروفایل‌ها «فقط TCP و UDP» نشان داده می‌شوند.</li>
+						<li>حالت سایت قرضی، قابلیتی آلفا که به‌طور پیش‌فرض خاموش است: اتصالی که خودش را اثبات نکند، بایت به بایت به یک وب‌سایت واقعی منتقل می‌شود. پنل آن را تنظیم می‌کند و برنامه‌ها فقط بعد از روشن کردن «ترنسپورت‌های آلفا» از آن استفاده می‌کنند. فقط خود پروژه آن را بازبینی کرده و در رده Detectable است.</li>
+						<li>یک افزونهٔ اختیاری Xray که به‌طور پیش‌فرض خاموش است: گره نسخهٔ رسمی Xray را به‌عنوان فرایند فرزند اجرا می‌کند تا برنامه‌های استاندارد با VLESS و Trojan روی TLS یا با Shadowsocks، روی TCP و UDP، وصل شوند. ترافیک آن‌ها در همان سهمیه‌ها حساب می‌شود و از همان قانون‌ها پیروی می‌کند. Veilway پروژه‌ای جداست و این افزونه جایگزین Xray نیست.</li>
+					</ul>
+					</details>
+					<div class="not-built">
+						<h3>هنوز ساخته نشده</h3>
+						<p>برنامهٔ اندروید هنوز به پیوندهای Xray وصل نمی‌شود، و افزونهٔ سرور VMess، Reality و خروجی‌های <bdi dir="ltr"><code class="vw-code">l3</code></bdi> یا <bdi dir="ltr"><code class="vw-code">chain</code></bdi> را ندارد. تونل تفکیکی (split tunneling) و ساخت‌های فروشگاه برای v0.3.0 برنامه‌ریزی شده‌اند. HTTP/2 و شکل‌های fronted هنوز پشت یک CDN واقعی اجرا نشده‌اند.</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -144,40 +177,38 @@
 				<h2 id="involved">بخوانید، اجرا کنید، گزارش دهید</h2>
 				<p>همه‌چیز آشکارا و در سازمان veilway-project در GitHub انجام می‌شود.</p>
 			</div>
-			<div class="vw-glass sheet">
-				<ul class="links">
-					<li>
-						<a href="https://github.com/veilway-project/veilway">کد</a>
-						<p>هسته، API کنترل، برنامه‌ها و اسکریپت نصب. برنامه‌ها و گره در صفحهٔ نسخه‌های آن هستند.</p>
-						<span class="vw-code">github.com/veilway-project/veilway</span>
-					</li>
-					<li>
-						<a href="https://github.com/veilway-project/veilway-panel">پنل</a>
-						<p>پنل وب برای گرداندن سرور: کاربران، دستگاه‌ها، لینک‌های اشتراک، اتصال سرورها و آینه‌ها، و API مدیریتی.</p>
-						<span class="vw-code">github.com/veilway-project/<wbr>veilway-panel</span>
-					</li>
-					<li>
-						<a href="https://veilway-project.github.io/veilway-docs/fa/">مستندات</a>
-						<p>راهنمای نصب، راهنماها، مرجع پیکربندی و مشخصات پروتکل. صفحه‌های پروتکل به فارسی هنوز فقط طرح کلی دارند.</p>
-						<span class="vw-code">veilway-project.github.io/<wbr>veilway-docs</span>
-					</li>
-					<li>
-						<a href="https://github.com/veilway-project/veilway/blob/main/SECURITY.md">سیاست امنیتی</a>
-						<p>آسیب‌پذیری را به‌صورت خصوصی و از راه فرم GitHub گزارش دهید، هرگز در یک issue عمومی.</p>
-						<span class="vw-code">SECURITY.md</span>
-					</li>
-					<li>
-						<a href="https://github.com/veilway-project/veilway/blob/main/CONTRIBUTING.fa.md">مشارکت</a>
-						<p>پیش از نخستین pull request این را بخوانید. در همان بار اول از شما خواسته می‌شود CLA را امضا کنید.</p>
-						<span class="vw-code">CONTRIBUTING.fa.md</span>
-					</li>
-					<li>
-						<a href="https://github.com/veilway-project">همهٔ مخزن‌ها</a>
-						<p>هسته، پنل، مستندات و سیستم طراحی، هر کدام در مخزن خودش.</p>
-						<span class="vw-code">github.com/veilway-project</span>
-					</li>
-				</ul>
-			</div>
+			<ul class="links">
+		<li>
+			<a href="https://veilway-project.github.io/veilway-docs/fa/">مستندات</a>
+			<p>راهنمای نصب، راهنماها، مرجع پیکربندی و مشخصات پروتکل. صفحه‌های پروتکل به فارسی هنوز فقط طرح کلی دارند.</p>
+			<span class="vw-code">veilway-project.github.io/<wbr>veilway-docs</span>
+		</li>
+		<li>
+			<a href="https://github.com/veilway-project/veilway">کد</a>
+			<p>هسته، API کنترل، برنامه‌ها و اسکریپت نصب. برنامه‌ها و گره در صفحهٔ نسخه‌های آن هستند.</p>
+			<span class="vw-code">github.com/veilway-project/veilway</span>
+		</li>
+		<li>
+			<a href="https://github.com/veilway-project/veilway-panel">پنل</a>
+			<p>پنل وب برای گرداندن سرور: کاربران، دستگاه‌ها، لینک‌های اشتراک، اتصال سرورها و آینه‌ها، و API مدیریتی.</p>
+			<span class="vw-code">github.com/veilway-project/<wbr>veilway-panel</span>
+		</li>
+		<li>
+			<a href="https://github.com/veilway-project/veilway/blob/main/SECURITY.md">سیاست امنیتی</a>
+			<p>آسیب‌پذیری را به‌صورت خصوصی و از راه فرم GitHub گزارش دهید، هرگز در یک issue عمومی.</p>
+			<span class="vw-code">SECURITY.md</span>
+		</li>
+		<li>
+			<a href="https://github.com/veilway-project/veilway/blob/main/CONTRIBUTING.fa.md">مشارکت</a>
+			<p>پیش از نخستین pull request این را بخوانید. در همان بار اول از شما خواسته می‌شود CLA را امضا کنید.</p>
+			<span class="vw-code">CONTRIBUTING.fa.md</span>
+		</li>
+		<li>
+			<a href="https://github.com/veilway-project">همهٔ مخزن‌ها</a>
+			<p>هسته، پنل، مستندات و سیستم طراحی، هر کدام در مخزن خودش.</p>
+			<span class="vw-code">github.com/veilway-project</span>
+		</li>
+			</ul>
 		</div>
 	</section>
 </main>

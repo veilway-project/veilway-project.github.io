@@ -285,9 +285,7 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
 	html { scroll-behavior: auto; }
 }
-/* The page keeps the two glows of the backdrop, a little lower, and leaves out the shafts: the strokes of the plan are the one place the icon's slant appears. Lower glows only move the ground toward --c-bg, which every text color is checked against. */
-body { min-block-size: 100vh; background-color: var(--c-bg); overflow-x: clip; --glow-1: 62%; --glow-2: 62%; }
-body.vw-backdrop::after { content: none; }
+body { min-block-size: 100vh; background-color: var(--c-bg); overflow-x: clip; }
 .wrap { inline-size: 100%; max-inline-size: 1180px; margin-inline: auto; padding-inline: var(--s-4); }
 @media (min-width: 720px) {
 	.wrap { padding-inline: var(--s-6); }
@@ -295,17 +293,19 @@ body.vw-backdrop::after { content: none; }
 .skip { position: absolute; inset-inline-start: var(--s-4); inset-block-start: -100px; z-index: 10; padding: var(--s-2) var(--s-3); border-radius: var(--r-2); background: var(--c-surface); color: var(--c-text); }
 .skip:focus { inset-block-start: var(--s-3); }
 .vw-root a:hover { text-decoration-thickness: 2px; }
-/* Header */
-.top { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); padding-block: var(--s-5); }
-.brand { padding: var(--s-1); margin: calc(var(--s-1) * -1); border-radius: var(--r-2); display: inline-flex; align-items: center; gap: var(--s-3); text-decoration: none; font-size: var(--text-4); font-weight: var(--weight-strong); }
+/* Header: the panel's chrome layer, a bar of glass with the brand and the few places to go. */
+.head { padding-block: var(--s-4) 0; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); padding: var(--s-2) var(--s-3); --g-shadow: var(--shadow-1); }
+.brand { padding: var(--s-1); border-radius: var(--r-2); display: inline-flex; align-items: center; gap: var(--s-3); text-decoration: none; font-size: var(--text-4); font-weight: var(--weight-strong); }
 .vw-root .brand { color: var(--c-text); }
 .brand img { inline-size: 32px; block-size: 32px; }
 .top nav ul { display: flex; align-items: center; gap: var(--s-1); }
 .top nav a { display: inline-flex; align-items: center; min-block-size: var(--control-h); padding-inline: var(--s-3); border-radius: var(--r-2); color: var(--c-text); text-decoration: none; font-weight: var(--weight-strong); transition: background-color var(--dur-1) var(--ease); }
+.vw-root .top nav a { color: var(--c-text); }
 .top nav a:hover { background: var(--hover); }
 .top nav .lang { border: 1px solid color-mix(in srgb, var(--c-text) 30%, transparent); margin-inline-start: var(--s-2); }
-@media (max-width: 400px) {
-	.top nav .doc-link { display: none; }
+@media (max-width: 480px) {
+	.top nav .code-link { display: none; }
 }
 /* Buttons, as in controls.css */
 .vw-button { display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2); min-block-size: 44px; padding: var(--s-1) var(--s-5); border: 1px solid color-mix(in srgb, var(--c-text) 30%, transparent); border-radius: var(--r-2); background: color-mix(in srgb, var(--c-text) 4%, transparent); font-weight: var(--weight-strong); line-height: var(--leading-tight); text-decoration: none; transition: background-color var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease); }
@@ -313,22 +313,22 @@ body.vw-backdrop::after { content: none; }
 .vw-button:hover { background: var(--hover); }
 .vw-root .vw-button[data-variant="primary"] { background: var(--c-accent) linear-gradient(to bottom, rgb(255 255 255 / 0.09), transparent 42%); border-color: transparent; color: var(--c-on-accent); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.22), var(--shadow-1); }
 .vw-button[data-variant="primary"]:hover { box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.22), 0 0 0 3px color-mix(in srgb, var(--c-accent) 40%, transparent); }
-/* Hero: the headline across the page, then what it is beside what it is not yet. */
+/* Hero: what it is, who it is for, and the two buttons. The light of the backdrop does the rest. */
 .hero { padding-block: var(--s-7) var(--s-7); }
 @media (min-width: 900px) {
-	.hero { padding-block: var(--s-8) var(--s-7); }
+	.hero { padding-block: calc(var(--s-8) + var(--s-6)) var(--s-8); }
 }
 .hero h1 { font-size: clamp(2.5rem, 1.1rem + 4.4vw, 4.75rem); line-height: 1.02; font-weight: var(--weight-display); letter-spacing: -0.032em; text-wrap: balance; max-inline-size: 11em; }
 :lang(fa) .hero h1 { font-size: clamp(2.25rem, 1.1rem + 3.8vw, 4.125rem); line-height: 1.4; letter-spacing: 0; }
-.hero-body { display: grid; gap: var(--s-5); margin-block-start: var(--s-6); }
+.hero-body { display: grid; gap: var(--s-6); margin-block-start: var(--s-6); }
 @media (min-width: 900px) {
-	.hero-body { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: var(--s-8); margin-block-start: var(--s-7); }
+	.hero-body { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: var(--s-8); margin-block-start: var(--s-7); align-items: end; }
 }
 .lede { font-size: var(--text-4); max-inline-size: 34em; }
 :lang(fa) .lede { font-size: 1.125rem; }
 .actions { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-block-start: var(--s-5); }
 /* Not a box: a sentence that carries its own sign, set apart by a rule in the warning color. */
-.caveat { align-self: start; padding-inline-start: var(--s-4); border-inline-start: 3px solid var(--c-warning); max-inline-size: 30em; }
+.caveat { padding-inline-start: var(--s-4); border-inline-start: 3px solid var(--c-warning); max-inline-size: 30em; }
 .caveat strong { display: flex; align-items: center; gap: var(--s-2); color: var(--c-warning); font-size: var(--text-4); margin-block-end: var(--s-1); }
 .caveat .vw-icon { stroke-width: 1.8; }
 /* Sections */
@@ -342,74 +342,81 @@ body.vw-backdrop::after { content: none; }
 	.intro { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: var(--s-8); align-items: baseline; }
 }
 .intro p { max-inline-size: 38em; }
-/* The plan as nine strokes at the slant of the app icon. Filled is done, filled to half is under way, an outline is planned; the word under each says the same for anyone who cannot see the fill. Phases are numbered because they are a sequence. */
-.plan { margin-block-start: var(--s-7); }
-.phases { display: grid; }
-.phases li { display: grid; grid-template-columns: 22px 1.4em minmax(0, 1fr) auto; align-items: center; gap: var(--s-3); padding-block: var(--s-2); border-block-start: 1px solid var(--c-line); }
-.phases li:first-child { border-block-start: 0; }
-.stroke { --fill: 0%; inline-size: 11px; block-size: 30px; justify-self: center; border: 1.5px solid var(--c-line-strong); border-radius: 1px; transform: skewX(var(--slant)); background: linear-gradient(var(--c-accent-ink), var(--c-accent-ink)) no-repeat bottom / 100% var(--fill); }
-.phases [data-state] .stroke { border-color: var(--c-accent-ink); }
-.phases [data-state="done"] .stroke { --fill: 100%; }
-.phases [data-state="now"] .stroke { --fill: 50%; }
-.phase-n { font-variant-numeric: tabular-nums; color: var(--c-text-muted); text-align: end; }
-.phase-state { font-size: var(--text-2); color: var(--c-text-muted); white-space: nowrap; }
-.phases [data-state="now"] .phase-name { font-weight: var(--weight-strong); }
-.phases [data-state="now"] .phase-state { color: var(--c-text); font-weight: var(--weight-strong); }
-@media (min-width: 900px) {
-	.phases { grid-template-columns: repeat(9, minmax(0, 1fr)); }
-	.phases li { grid-template-columns: none; align-content: start; align-items: start; gap: 0; padding: 0; border-block-start: 0; }
-	.phases li > :not(.stroke) { padding-inline-end: var(--s-3); }
-	/* The bottom edge stays put and the top leans back, so each stroke stands on the shared line under the row. */
-	.phases { --stroke-h: clamp(120px, 12vw, 168px); }
-	/* In left-to-right the first stroke leans out past the start of the row into the page margin. Where the margin is too narrow for that, the row makes room for it. */
-	[dir="ltr"] .phases { padding-inline-start: max(0px, calc(var(--stroke-h) * 0.48 + var(--s-4) - var(--s-6) - max(0px, (100vw - 1180px) / 2))); }
-	.stroke { inline-size: 30px; block-size: var(--stroke-h); justify-self: start; transform-origin: bottom; border-width: 2px; border-radius: 2px; }
-	.phase-n { text-align: start; margin-block-start: var(--s-3); padding-block-start: var(--s-3); border-block-start: 1px solid var(--c-line-strong); }
-	.phase-name { margin-block-start: var(--s-1); line-height: var(--leading-tight); }
-	.phase-state { margin-block-start: var(--s-2); white-space: normal; }
-	/* The one moment of motion: the finished strokes fill from the line up, in order, once. */
-	.phases [data-state] .stroke { animation: fill 900ms var(--ease) both; }
-	.phases li:nth-child(2) .stroke { animation-delay: 120ms; }
-	.phases li:nth-child(3) .stroke { animation-delay: 240ms; }
-	.phases li:nth-child(4) .stroke { animation-delay: 360ms; }
-}
-@media (min-width: 900px) and (prefers-reduced-motion: reduce) {
-	.phases [data-state] .stroke { animation: none; }
-}
-@keyframes fill {
-	from { background-size: 100% 0%; }
-}
-.phase-n, .phase-name { display: block; }
-.status { display: grid; gap: var(--s-6); margin-block-start: var(--s-7); }
-@media (min-width: 900px) {
-	.status { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: var(--s-8); }
-}
-.status h3, .points h3 { font-size: var(--text-4); line-height: var(--leading-tight); font-weight: var(--weight-strong); }
-.done-list { display: grid; gap: var(--s-3); margin-block-start: var(--s-3); }
-.done-list li { position: relative; padding-inline-start: var(--s-5); max-inline-size: 40em; }
+h3 { font-size: var(--text-4); line-height: var(--leading-tight); font-weight: var(--weight-strong); }
+/* The mark of the app icon, a stroke at its slant: the bullet of a list, and the state of a row. */
+.mark { display: inline-block; inline-size: 4px; block-size: 0.95em; border-radius: 1px; background: var(--c-accent-ink); transform: skewX(var(--slant)); }
+.done-list { display: grid; gap: var(--s-3); }
+.done-list li { position: relative; padding-inline-start: var(--s-5); max-inline-size: 42em; }
 .done-list li::before { content: ""; position: absolute; inset-inline-start: 4px; inset-block-start: 0.35em; inline-size: 4px; block-size: 0.95em; border-radius: 1px; background: var(--c-accent-ink); transform: skewX(var(--slant)); }
 :lang(fa) .done-list li::before { inset-block-start: 0.5em; }
-.status .next { margin-block-start: var(--s-3); max-inline-size: 30em; }
-.status .install { margin-block-start: var(--s-6); }
-.status .cmd { direction: ltr; text-align: left; }
-/* What it does differently: the client windows beside the points they show. */
-.diff { display: grid; gap: var(--s-7); margin-block-start: var(--s-7); align-items: start; }
+/* What it does differently: the points as rows, the transports beside them on one sheet. */
+.diff { display: grid; gap: var(--s-6); margin-block-start: var(--s-7); align-items: start; }
 @media (min-width: 900px) {
-	.diff { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr); gap: var(--s-8); }
+	.diff { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: var(--s-8); }
 }
-.shots { margin: 0; }
-.shots-pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); max-inline-size: 480px; }
-.shots img { display: block; inline-size: 100%; block-size: auto; border-radius: var(--r-3); border: 1px solid var(--glass-edge); box-shadow: 0 0 0 1px color-mix(in srgb, var(--shadow-ink) 16%, transparent), var(--shadow-3); }
-.shots figcaption { margin-block-start: var(--s-4); font-size: var(--text-2); color: var(--c-text-muted); max-inline-size: 36em; }
-.points > li + li { margin-block-start: var(--s-5); padding-block-start: var(--s-5); border-block-start: 1px solid var(--c-line); }
+.points > li { padding-block: var(--s-4); border-block-start: 1px solid var(--c-line-strong); }
+.points > li:first-child { padding-block-start: 0; border-block-start: 0; }
 .points p { margin-block-start: var(--s-2); color: var(--c-text-muted); max-inline-size: 38em; }
-/* Links, in the one glass sheet on the page */
-.sheet { margin-block-start: var(--s-7); padding: var(--s-2) var(--s-5); }
+.sheet { padding: var(--s-5); --g-shadow: var(--shadow-2); }
 @media (min-width: 720px) {
-	.sheet { padding: var(--s-3) var(--s-6); }
+	.sheet { padding: var(--s-6); }
 }
-.links > li { display: grid; gap: var(--s-1); padding-block: var(--s-4); }
-.links > li + li { border-block-start: 1px solid var(--c-line); }
+.sheet > h3 { font-size: var(--text-5); letter-spacing: var(--tracking-display); }
+.sheet > p, .sheet .lead { margin-block-start: var(--s-2); color: var(--c-text-muted); }
+.transports { margin-block-start: var(--s-4); }
+.transports li { display: grid; grid-template-columns: 1fr auto; gap: var(--s-2) var(--s-4); align-items: baseline; padding-block: var(--s-3); border-block-start: 1px solid var(--c-line); }
+.transports .vw-code { font-size: var(--text-2); color: var(--c-text-muted); }
+.rating { font-size: var(--text-2); color: var(--c-text-muted); }
+/* Two ways in: a wide sheet for the node and a narrower one for the apps. They hold different things, so they are shaped differently. */
+.ways { display: grid; gap: var(--s-5); align-items: start; }
+@media (min-width: 900px) {
+	.ways { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--s-6); }
+}
+.ways .sheet > h2 { font-size: var(--text-6); line-height: var(--leading-tight); font-weight: var(--weight-strong); letter-spacing: var(--tracking-display); text-wrap: balance; }
+.ways .sheet > * + * { margin-block-start: var(--s-3); }
+.ways .sheet > h2 + p { margin-block-start: var(--s-3); }
+.ways p { max-inline-size: 38em; }
+.cmd { padding: var(--s-4); direction: ltr; text-align: left; overflow-x: auto; margin-block-start: var(--s-4); }
+.cmd .vw-code { display: block; font-size: var(--text-3); white-space: pre-wrap; overflow-wrap: anywhere; }
+.rows > div { display: grid; gap: var(--s-1); padding-block: var(--s-3); border-block-start: 1px solid var(--c-line); }
+.rows dt { font-weight: var(--weight-strong); }
+.rows dd { margin: 0; color: var(--c-text-muted); }
+@media (min-width: 720px) {
+	.rows.wide > div { gap: var(--s-4); }
+}
+.ways .rows { margin-block-start: var(--s-4); }
+.ways .actions { margin-block-start: var(--s-5); }
+/* Where it stands */
+.stand { display: grid; gap: var(--s-6); margin-block-start: var(--s-7); }
+@media (min-width: 900px) {
+	.stand { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: var(--s-8); }
+}
+.stand h3 { margin-block-end: var(--s-2); }
+.stand .rows > div:first-child { border-block-start: 0; }
+.state dt { display: flex; align-items: baseline; gap: var(--s-3); }
+.state .mark { inline-size: 6px; flex: none; }
+.state[data-state="half"] .mark { background: linear-gradient(to top, var(--c-accent-ink) 50%, transparent 50%); box-shadow: inset 0 0 0 1.5px var(--c-accent-ink); }
+.state[data-state="none"] .mark { background: transparent; box-shadow: inset 0 0 0 1.5px var(--c-accent-ink); }
+.state dd { padding-inline-start: calc(6px + var(--s-3)); }
+@media (min-width: 720px) {
+	.rows.wide > .state { grid-template-columns: 12em minmax(0, 1fr); }
+	.state dd { padding-inline-start: 0; }
+}
+.stand details { margin-block-start: var(--s-6); }
+@media (min-width: 900px) {
+	.stand details { margin-block-start: 0; }
+}
+summary { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); min-block-size: var(--control-h); cursor: pointer; font-size: var(--text-5); font-weight: var(--weight-strong); letter-spacing: var(--tracking-display); list-style: none; border-radius: var(--r-2); }
+summary::-webkit-details-marker { display: none; }
+summary .vw-icon { transition: transform var(--dur-2) var(--ease); }
+details[open] > summary .vw-icon { transform: rotate(180deg); }
+details .done-list { margin-block-start: var(--s-4); }
+details .done-list + h3, details .lead + .done-list { margin-block-start: var(--s-4); }
+.not-built { margin-block-start: var(--s-6); }
+.not-built p { max-inline-size: 34em; }
+/* Docs and links */
+.links { margin-block-start: var(--s-7); }
+.links > li { display: grid; gap: var(--s-1); padding-block: var(--s-4); border-block-start: 1px solid var(--c-line-strong); }
 @media (min-width: 900px) {
 	.links > li { grid-template-columns: 10em minmax(0, 1fr) max-content; gap: var(--s-6); align-items: baseline; }
 	.links .vw-code { white-space: nowrap; }
