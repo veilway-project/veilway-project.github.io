@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Veilway</title>
-<meta name="description" content="Veilway is open-source software for running your own VPN server on a censored or hostile network. The first alpha runs a server with its web panel and connects from Linux, macOS, Windows and Android. Apache-2.0.">
+<meta name="description" content="Veilway is open-source software for running your own VPN server on a censored or hostile network. The alpha runs a server with its web panel and connects from Linux, macOS, Windows and Android. Apache-2.0.">
 <meta name="color-scheme" content="dark light">
 <link rel="icon" href="img/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -53,13 +53,13 @@
 		<h1 id="title">A VPN for networks that block VPNs</h1>
 		<div class="hero-body">
 			<div>
-				<p class="lede">Veilway is open-source software for running your own VPN server on a censored or hostile network, for yourself or a small group. The first release, v0.1.0-alpha, installs a server and its web panel with one script or Docker, and connects from Linux, macOS, Windows and Android.</p>
+				<p class="lede">Veilway is open-source software for running your own VPN server on a censored or hostile network, for yourself or a small group. The current release, v0.2.0-alpha, installs a server and its web panel with one script or Docker, and connects from Linux, macOS, Windows and Android.</p>
 				<div class="actions">
-					<a class="vw-button" data-variant="primary" href="https://github.com/veilway-project/veilway/releases">Download the apps</a>
+					<a class="vw-button" data-variant="primary" href="https://github.com/veilway-project/veilway/releases/tag/v0.2.0-alpha">Download the apps</a>
 					<a class="vw-button" href="#install">Install a server</a>
 				</div>
 			</div>
-			<p class="caveat" role="note"><strong><svg class="vw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4.5"/><path d="M12 17.2v.1"/></svg>Alpha</strong>It has had no outside security review. Every transport is rated Detectable. The macOS app has never run on a real Mac, and the Windows app has never connected to a node. Expect bugs, and tell us about them.</p>
+			<p class="caveat" role="note"><strong><svg class="vw-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4.5"/><path d="M12 17.2v.1"/></svg>Alpha</strong>It has had no outside security review. Every transport is rated Detectable. The macOS and Windows apps are compiled and tested on CI only, and have never connected to a node on a real machine. Expect bugs, and tell us about them.</p>
 		</div>
 	</section>
 	<section class="section" aria-labelledby="status">
@@ -72,20 +72,23 @@
 				<div>
 					<h3>Works today</h3>
 					<ul class="done-list">
-						<li>A server that runs WireGuard for many users over five transports: plain UDP, obfuscated UDP, TLS, WebSocket and a fronted HTTP path. WebSocket and fronted run behind your own web server. It has routing rules, quotas, and config reload without a restart. Someone who probes it without an account gets the operator's own website.</li>
+						<li>A server that runs WireGuard for many users over five transports: plain UDP, obfuscated UDP, TLS, WebSocket and a fronted HTTP path. The client speaks HTTP/2 like Chrome on TLS, WebSocket and fronted, and the node offers it when you turn on <code class="vw-code">http2</code>. WebSocket and fronted run behind your own web server, and the panel has presets for the shapes of the fronted path. It has routing rules, quotas, and config reload without a restart. Someone who probes it without an account gets the operator's own website.</li>
 						<li>A web panel in English and Persian: admin sign-in with a password and a one-time code, users, devices and groups, subscription links and QR codes, inbounds, exits (a default and one per user), routing, guided setup for an entry node and a reverse tunnel, relays, traffic history, DNS and logs, notices to every device, more than one admin, backup and restore, an update button, and an admin API with tokens. It listens on loopback only, and your web server in front of it provides TLS.</li>
 						<li>Subscriptions that stay private on the way: requests and answers are encrypted end to end (Oblivious HTTP keys over HPKE), so a relay mirror sees nothing of them. A link carries the server's gateway key. Named endpoints sit at <code class="vw-code">sub_path/&lt;name&gt;</code> and can be assigned per user and per group. Static and relay mirrors serve as backup update addresses, and an app asks before it uses one. A subscription can also travel as a password-protected <code class="vw-code">.vwsealed</code> file.</li>
 						<li>Desktop apps for Linux, macOS and Windows, in English and Persian. They import a subscription by link, file or QR picture, ask plainly before anything risky, connect with one button, and show live speed, usage, the exit and the connection details. Share subscription passes on the link only, never the device's keys. A kill switch blocks traffic when the tunnel fails, and the app updates itself.</li>
 						<li>An Android app (arm64) on the same engine, with the same screens in both languages and its own updater. It cannot scan a QR code with the camera yet.</li>
-						<li>Links between two servers, paired with codes both operators compare.</li>
+						<li>Links between two servers, paired with codes both operators compare. A node can forward a TCP or UDP port through a link, with limits per source. Relays can be set per user and per group.</li>
+						<li>Offline bundles: one signed file with app updates, subscription documents and notices, made with <code class="vw-code">veilway bundle make</code> and checked with <code class="vw-code">veilway bundle inspect</code>. The desktop and Android apps show what is in it, and nothing applies without a tap.</li>
 						<li>An optional Xray add-on, off by default: the node runs the official Xray release as a child process, so stock apps can connect with VLESS and Trojan over TLS or with Shadowsocks, over TCP and UDP. Their traffic counts in the same quotas and follows the same rules. Veilway is a separate project, and the add-on does not replace Xray.</li>
+						<li>Xray links in the desktop app on Linux, macOS and Windows (vless, vmess, trojan and ss). The add-on is installed on request from a pinned release, and these profiles show "TCP and UDP only".</li>
+						<li>Borrowed-site mode, an alpha feature that is off by default: a connection that does not prove itself is relayed to a real website byte for byte. The panel sets it up, and the apps use it only after "Alpha transports" is turned on. Only the project has reviewed it, and it is rated Detectable.</li>
 					</ul>
 					<h3 class="install">What has been tested</h3>
 					<ul class="done-list">
 						<li>The server and panel: the alpha gate installs a fresh systemd server from signed release files and connects a client, and passes 55 checks. The Xray gate passes 119.</li>
 						<li>Linux: a 70-point check in Docker, with a real node and client.</li>
 						<li>Android: used on a real phone against a demo node.</li>
-						<li>Windows: a smoke test on a real Windows runner. The adapter, routes, DNS rule and kill switch take effect, and nothing leaks. It has never connected to a node.</li>
+						<li>Windows: unit tests and a smoke test on a Windows runner. The adapter, routes, DNS rule and kill switch take effect, and nothing leaks. It has never connected to a node on a real PC.</li>
 						<li>macOS: unit tests on a macOS runner. It has never been run on a real Mac.</li>
 					</ul>
 				</div>
@@ -93,12 +96,12 @@
 					<h3 id="install">Install a server</h3>
 					<p class="next">One script installs the node, the panel or both on a Linux server, and checks every download's signature with minisign before it installs anything. Run it as root:</p>
 					<p class="next cmd"><code class="vw-code">curl -fsSL https://raw.githubusercontent.com/veilway-project/veilway/main/scripts/veilway.sh | sudo bash</code></p>
-					<p class="next">The same script, saved as <code class="vw-code">veilway.sh</code>, also installs a relay mirror (<code class="vw-code">install mirror</code>), adds the Xray add-on (<code class="vw-code">addon xray install</code>) and moves the panel's admin pages to a new path (<code class="vw-code">panel-prefix</code>).</p>
+					<p class="next">The same script, saved as <code class="vw-code">veilway.sh</code>, also installs a relay mirror (<code class="vw-code">install mirror</code>), a relay (<code class="vw-code">install relay</code>), adds the Xray add-on (<code class="vw-code">addon xray install</code>) and moves the panel's admin pages to a new path (<code class="vw-code">panel-prefix</code>).</p>
 					<p class="next">Docker images with a compose file are another option: <code class="vw-code">ghcr.io/veilway-project/veilway</code> and <code class="vw-code">ghcr.io/veilway-project/veilway-panel</code>. The <a href="https://veilway-project.github.io/veilway-docs/getting-started/">getting started guide</a> walks through both.</p>
 					<h3 class="install">Downloads</h3>
-					<p class="next">The desktop app for Windows (an installer) and Linux (<code class="vw-code">.deb</code> and <code class="vw-code">.rpm</code>), the Android app, and the command-line client and node for Linux, macOS and Windows are on the <a href="https://github.com/veilway-project/veilway/releases">Veilway releases page</a>. The panel has <a href="https://github.com/veilway-project/veilway-panel/releases">its own releases</a>. The install script fetches both for you.</p>
+					<p class="next">The desktop app for Windows (an installer) and Linux (<code class="vw-code">.deb</code> and <code class="vw-code">.rpm</code>), the Android app, and the command-line client and node for Linux, macOS and Windows are on the <a href="https://github.com/veilway-project/veilway/releases/tag/v0.2.0-alpha">v0.2.0-alpha release page</a>. Installer mirrors are signed and refuse an older release. The panel has <a href="https://github.com/veilway-project/veilway-panel/releases">its own releases</a>. The install script fetches both for you.</p>
 					<h3 class="install">Not built yet</h3>
-					<p class="next">The apps do not connect to Xray links yet, and the add-on has no VMess, no Reality and no <code class="vw-code">l3</code> or <code class="vw-code">chain</code> exits. After the alpha: HTTP/2 on the TLS and WebSocket transports, more HTTP shapes for the fronted path, and opt-in bonded connections for networks that slow down each connection. The fronted path has not run behind a real CDN.</p>
+					<p class="next">The Android app does not connect to Xray links yet, and the server add-on has no VMess, no Reality and no <code class="vw-code">l3</code> or <code class="vw-code">chain</code> exits. Split tunneling and store builds are planned for v0.3.0. HTTP/2 and the fronted shapes have not run behind a real CDN.</p>
 				</div>
 			</div>
 		</div>
