@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; script-src 'self'">
 <meta name="referrer" content="no-referrer">
 <title>Veilway</title>
 <meta name="description" content="Veilway نرم‌افزاری متن‌باز برای راه‌اندازی سرور VPN شخصی روی شبکه‌های سانسورشده یا ناامن است. نسخهٔ آلفا یک سرور را با پنل وبش راه می‌اندازد و از لینوکس، macOS، ویندوز و اندروید به آن وصل می‌شود. با مجوز Apache-2.0.">
@@ -35,6 +35,7 @@
 <meta name="twitter:image:alt" content="نشان Veilway بالای عبارت «VPN برای شبکه‌هایی که VPN را می‌بندند» و ردیفی از نه خط مایل که هفت‌تای آن پر است">
 <link rel="preload" href="../fonts/vazirmatn-arabic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../site.css">
+<script src="../dir.js"></script>
 </head>
 <body class="vw-root vw-backdrop" data-fixed>
 <a class="skip" href="#main">رفتن به محتوا</a>
@@ -215,8 +216,9 @@
 </main>
 <footer class="foot">
 	<div class="wrap">
+		<p><label class="dir-pick">جهت صفحه <select id="dir-select"><option value="auto">خودکار</option><option value="ltr">چپ به راست</option><option value="rtl">راست به چپ</option></select></label></p>
 		<p>Veilway با مجوز <a href="https://github.com/veilway-project/veilway/blob/main/LICENSE">Apache-2.0</a> منتشر می‌شود. این مجوز شامل نام پروژه نمی‌شود، <a href="https://github.com/veilway-project/veilway/blob/main/TRADEMARKS.md">TRADEMARKS.md</a> را ببینید. این‌که برنامه‌ها چه چیزی نگه می‌دارند و می‌فرستند در <a href="https://veilway-project.github.io/veilway-docs/fa/legal/app-privacy/">سیاست حریم خصوصی</a> آن‌ها آمده است.</p>
-		<p>این صفحه هیچ کوکی‌ای نمی‌گذارد و چیزی از سایت‌های دیگر بارگیری نمی‌کند. فونت‌ها با مجوز SIL Open Font License: <a href="../fonts/OFL-atkinson-hyperlegible-next.txt">Atkinson Hyperlegible Next</a>، <a href="../fonts/OFL-atkinson-hyperlegible-mono.txt">Atkinson Hyperlegible Mono</a> و <a href="../fonts/OFL-vazirmatn.txt">Vazirmatn</a>.</p>
+		<p>این صفحه هیچ کوکی‌ای نمی‌گذارد و چیزی از سایت‌های دیگر بارگیری نمی‌کند. اگر جهت صفحه را انتخاب کنید، مرورگرتان همان انتخاب را نگه می‌دارد و چیز دیگری نه. فونت‌ها با مجوز SIL Open Font License: <a href="../fonts/OFL-atkinson-hyperlegible-next.txt">Atkinson Hyperlegible Next</a>، <a href="../fonts/OFL-atkinson-hyperlegible-mono.txt">Atkinson Hyperlegible Mono</a> و <a href="../fonts/OFL-vazirmatn.txt">Vazirmatn</a>.</p>
 	</div>
 </footer>
 </body>

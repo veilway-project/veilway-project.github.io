@@ -432,3 +432,4 @@ details .done-list + h3, details .lead + .done-list { margin-block-start: var(--
 .foot { padding-block: var(--s-6) var(--s-7); border-block-start: 1px solid var(--c-line); font-size: var(--text-2); color: var(--c-text-muted); }
 .foot .wrap { display: grid; gap: var(--s-2); }
 .foot p { max-inline-size: 60em; }
+.dir-pick select { margin-inline-start: var(--s-2); min-block-size: 32px; padding-inline: var(--s-2); border: 1px solid var(--c-line); border-radius: var(--r-1); background: var(--c-surface, transparent); color: var(--c-text); font: inherit; }

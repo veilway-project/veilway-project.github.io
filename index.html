@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; script-src 'self'">
 <meta name="referrer" content="no-referrer">
 <title>Veilway</title>
 <meta name="description" content="Veilway is open-source software for running your own VPN server on a censored or hostile network. The alpha runs a server with its web panel and connects from Linux, macOS, Windows and Android. Apache-2.0.">
@@ -35,6 +35,7 @@
 <meta name="twitter:image:alt" content="The Veilway logo above the words A VPN for networks that block VPNs, and a row of nine slanted strokes, seven of them filled">
 <link rel="preload" href="fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
+<script src="dir.js"></script>
 </head>
 <body class="vw-root vw-backdrop" data-fixed>
 <a class="skip" href="#main">Skip to content</a>
@@ -215,8 +216,9 @@
 </main>
 <footer class="foot">
 	<div class="wrap">
+		<p><label class="dir-pick">Layout direction <select id="dir-select"><option value="auto">Automatic</option><option value="ltr">Left to right</option><option value="rtl">Right to left</option></select></label></p>
 		<p>Veilway is licensed under <a href="https://github.com/veilway-project/veilway/blob/main/LICENSE">Apache-2.0</a>. The license does not cover the name, see <a href="https://github.com/veilway-project/veilway/blob/main/TRADEMARKS.md">TRADEMARKS.md</a>. What the apps keep and send is in their <a href="https://veilway-project.github.io/veilway-docs/legal/app-privacy/">privacy policy</a>.</p>
-		<p>This page sets no cookies and loads nothing from other sites. Fonts under the SIL Open Font License: <a href="fonts/OFL-atkinson-hyperlegible-next.txt">Atkinson Hyperlegible Next</a>, <a href="fonts/OFL-atkinson-hyperlegible-mono.txt">Atkinson Hyperlegible Mono</a> and <a href="fonts/OFL-vazirmatn.txt">Vazirmatn</a>.</p>
+		<p>This page sets no cookies and loads nothing from other sites. If you pick a layout direction, your browser keeps that choice, and nothing else. Fonts under the SIL Open Font License: <a href="fonts/OFL-atkinson-hyperlegible-next.txt">Atkinson Hyperlegible Next</a>, <a href="fonts/OFL-atkinson-hyperlegible-mono.txt">Atkinson Hyperlegible Mono</a> and <a href="fonts/OFL-vazirmatn.txt">Vazirmatn</a>.</p>
 	</div>
 </footer>
 </body>
