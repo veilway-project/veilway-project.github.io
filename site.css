@@ -303,9 +303,12 @@ body { min-block-size: 100vh; background-color: var(--c-bg); overflow-x: clip; }
 .top nav a { display: inline-flex; align-items: center; min-block-size: var(--control-h); padding-inline: var(--s-3); border-radius: var(--r-2); color: var(--c-text); text-decoration: none; font-weight: var(--weight-strong); transition: background-color var(--dur-1) var(--ease); }
 .vw-root .top nav a { color: var(--c-text); }
 .top nav a:hover { background: var(--hover); }
+.top nav .tg svg { margin-inline-end: var(--s-2); }
 .top nav .lang { border: 1px solid color-mix(in srgb, var(--c-text) 30%, transparent); margin-inline-start: var(--s-2); }
 @media (max-width: 480px) {
 	.top nav .code-link { display: none; }
+	.top nav .tg span { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+	.top nav .tg svg { margin-inline-end: 0; }
 }
 /* Buttons, as in controls.css */
 .vw-button { display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2); min-block-size: 44px; padding: var(--s-1) var(--s-5); border: 1px solid color-mix(in srgb, var(--c-text) 30%, transparent); border-radius: var(--r-2); background: color-mix(in srgb, var(--c-text) 4%, transparent); font-weight: var(--weight-strong); line-height: var(--leading-tight); text-decoration: none; transition: background-color var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease); }

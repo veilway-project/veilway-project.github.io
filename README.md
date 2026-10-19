@@ -11,6 +11,7 @@ The front page of Veilway, an open-source VPN for censored and hostile networks.
 
 <p align="center">
 <a href="LICENSE"><img alt="license" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
+<a href="https://t.me/VeilwayGroup"><img alt="Telegram" src="https://img.shields.io/badge/Telegram-VeilwayGroup-26A5E4?logo=telegram&logoColor=white"></a>
 </p>
 
 ## What it is
