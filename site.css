@@ -310,6 +310,12 @@ body { min-block-size: 100vh; background-color: var(--c-bg); overflow-x: clip; }
 	.top nav .tg span { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 	.top nav .tg svg { margin-inline-end: 0; }
 }
+@media (max-width: 400px) {
+	.top { gap: var(--s-2); padding-inline: var(--s-2); }
+	.brand { gap: var(--s-2); }
+	.top nav a { padding-inline: var(--s-2); }
+	.top nav .lang { margin-inline-start: 0; }
+}
 /* Buttons, as in controls.css */
 .vw-button { display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2); min-block-size: 44px; padding: var(--s-1) var(--s-5); border: 1px solid color-mix(in srgb, var(--c-text) 30%, transparent); border-radius: var(--r-2); background: color-mix(in srgb, var(--c-text) 4%, transparent); font-weight: var(--weight-strong); line-height: var(--leading-tight); text-decoration: none; transition: background-color var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease); }
 .vw-root .vw-button { color: var(--c-text); }
@@ -433,3 +439,7 @@ details .done-list + h3, details .lead + .done-list { margin-block-start: var(--
 .foot .wrap { display: grid; gap: var(--s-2); }
 .foot p { max-inline-size: 60em; }
 .dir-pick select { margin-inline-start: var(--s-2); min-block-size: 32px; padding-inline: var(--s-2); border: 1px solid var(--c-line); border-radius: var(--r-1); background: var(--c-surface, transparent); color: var(--c-text); font: inherit; }
+@media (pointer: coarse) {
+	.dir-pick select { min-block-size: var(--control-h); }
+	.links a { display: inline-block; padding-block: var(--s-2); }
+}
