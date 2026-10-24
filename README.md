@@ -42,3 +42,7 @@ Edit the files and open `index.html` in a browser, or serve the folder with any 
 ## License
 
 Apache-2.0, see `LICENSE`. The name "Veilway" and the logo are not licensed for use by derived works; see [TRADEMARKS.md](https://github.com/veilway-project/veilway/blob/main/TRADEMARKS.md).
+
+## Releases
+
+Both pages name the current release, as `vX.Y.Z-alpha`, in the opening paragraph, the link to its release page and the download button. At every release, search both files for the old version and change every match.
