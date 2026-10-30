@@ -337,6 +337,11 @@ body { min-block-size: 100vh; background-color: var(--c-bg); overflow-x: clip; }
 :lang(fa) .lede { font-size: 1.125rem; }
 .actions { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-block-start: var(--s-5); }
 /* Not a box: a sentence that carries its own sign, set apart by a rule in the warning color. */
+.steps { display: grid; gap: var(--s-2); margin-block-start: var(--s-5); max-inline-size: 34em; counter-reset: step; }
+.steps li { display: grid; grid-template-columns: 1.5em minmax(0, 1fr); gap: var(--s-2); counter-increment: step; }
+.steps li::before { content: counter(step) "."; font-weight: var(--weight-strong); color: var(--c-accent-ink); font-variant-numeric: tabular-nums; }
+.have-link { margin-block-start: var(--s-3); color: var(--c-text-muted); }
+.done-list + .more { margin-block-start: var(--s-4); }
 .caveat { padding-inline-start: var(--s-4); border-inline-start: 3px solid var(--c-warning); max-inline-size: 30em; }
 .caveat strong { display: flex; align-items: center; gap: var(--s-2); color: var(--c-warning); font-size: var(--text-4); margin-block-end: var(--s-1); }
 .caveat .vw-icon { stroke-width: 1.8; }
